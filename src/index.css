@@ -1,47 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Space+Grotesk:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Montserrat:wght@850;900&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Space Grotesk", sans-serif;
+  --font-display: "Montserrat", "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Luxury Poster Core Themes */
+.text-gold-metallic {
+  background: linear-gradient(135deg, #fffcf0 0%, #ffeaa7 15%, #ffd700 45%, #d4af37 70%, #b8860b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 8px rgba(255, 215, 0, 0.35));
+}
+
+.text-gold-metallic-light {
+  background: linear-gradient(135deg, #ffffff 0%, #fff3b0 30%, #ffd700 70%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 4px rgba(255, 215, 0, 0.2));
+}
+
+.border-gold-glow {
+  background: rgba(3, 20, 45, 0.75);
+  border: 1px solid rgba(255, 215, 0, 0.45);
+  box-shadow: 0 0 25px rgba(0, 212, 255, 0.15), 0 0 30px rgba(255, 215, 0, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.border-gold-glow:hover {
+  border-color: rgba(255, 215, 0, 0.85);
+  box-shadow: 0 0 35px rgba(0, 212, 255, 0.3), 0 0 40px rgba(255, 215, 0, 0.25);
 }
 
 /* Custom overlay background blur effects */
 .glass-effect {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(3, 20, 45, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 212, 255, 0.08);
 }
 
 .glass-effect-light {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .glow-blue {
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.15);
+  box-shadow: 0 0 35px rgba(0, 212, 255, 0.2);
 }
 
 .glow-blue-strong {
-  box-shadow: 0 0 50px rgba(59, 130, 246, 0.35);
+  box-shadow: 0 0 50px rgba(0, 212, 255, 0.45), 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+/* Premium Button Shine animation */
+.btn-shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 20%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0) 100%);
+  transform: skewX(-25deg);
+  animation: shine 4s infinite ease-in-out;
+}
+
+@keyframes shine {
+  0% { left: -60%; }
+  15%, 100% { left: 140%; }
+}
+
+/* US Flag Faded SVG Pattern background */
+.us-flag-bg {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' opacity='0.02'%3E%3Crect width='100' height='50' fill='%23ffffff'/%3E%3Cpath d='M0 5h100M0 15h100M0 25h100M0 35h100M0 45h100M0 55h100M0 65h100M0 75h100M0 85h100M0 95h100' stroke='%23ffffff' stroke-width='3'/%3E%3Crect width='45' height='35' fill='%23ffffff'/%3E%3Cpath d='M5 5l2 2m5-2l2 2m5-2l2 2m5-2l2 2' stroke='%23ffffff' stroke-width='1.5'/%3E%3C/svg%3E");
 }
 
 /* Smooth custom scrollbar for luxury UI feel */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: #020617;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
-  border-radius: 4px;
+  background: #0b2d4d;
+  border-radius: 5px;
+  border: 2px solid #020617;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b82f6;
+  background: #ffd700;
 }
 

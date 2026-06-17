@@ -145,33 +145,33 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
   ];
 
   return (
-    <div className="w-full max-w-2xl mx-auto rounded-3xl p-1 bg-gradient-to-r from-blue-500/20 via-indigo-500/20 to-purple-500/20 overflow-hidden shadow-2xl">
-      <div className="w-full glass-effect rounded-[22px] p-6 sm:p-10 text-white relative">
+    <div className="w-full max-w-2xl mx-auto rounded-3xl p-[1px] bg-gradient-to-r from-[#d4af37]/40 via-[#ffd700] to-[#b8860b]/40 overflow-hidden shadow-2xl">
+      <div className="w-full bg-[#03142d]/95 backdrop-blur-2xl rounded-[22px] p-6 sm:p-10 text-white relative">
         
         {/* Glow Effects */}
-        <div className="absolute top-0 left-1/4 w-32 h-32 bg-blue-500/10 rounded-full blur-2xl" />
-        <div className="absolute bottom-0 right-1/4 w-32 h-32 bg-indigo-500/10 rounded-full blur-2xl" />
+        <div className="absolute top-0 left-1/4 w-32 h-32 bg-[#ffd700]/5 rounded-full blur-2xl" />
+        <div className="absolute bottom-0 right-1/4 w-32 h-32 bg-[#00D4FF]/5 rounded-full blur-2xl" />
 
         <AnimatePresence mode="wait">
           {!successLead ? (
             <form onSubmit={handleSubmit} className="space-y-6 relative z-10" id="partner-reg-form">
               {/* Header Title */}
-              <div className="text-center space-y-2 mb-8">
-                <span className="text-xs font-mono font-medium py-1 px-3 bg-blue-500/10 text-blue-400 rounded-full border border-blue-500/20 tracking-wider uppercase">
+              <div className="text-center space-y-3 mb-8">
+                <span className="text-xs font-mono font-bold py-1 px-3 bg-[#ffd700]/10 text-[#ffd700] rounded-full border border-[#ffd700]/20 tracking-wider uppercase">
                   Bước {step} / 4: {step === 1 ? 'Thông Tin Liên Hệ' : step === 2 ? 'Lĩnh Vực Hoạt Động' : step === 3 ? 'Năng Lực Quy Mô' : 'Nhu Cầu Hợp Tác'}
                 </span>
-                <h3 className="text-2xl font-display font-semibold tracking-tight bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
+                <h3 className="text-2xl font-display font-black tracking-tight text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text uppercase">
                   Đăng Ký Hợp Tác Với RainSoft
                 </h3>
-                <p className="text-sm text-slate-400">
+                <p className="text-xs text-[#DDEBFF]/80">
                   Hãy điền các thông tin cơ bản để chúng tôi thiết lập cơ chế đặc quyền phù hợp.
                 </p>
               </div>
 
               {/* Progress Bar */}
-              <div className="w-full h-1 bg-slate-800 rounded-full overflow-hidden mb-6">
+              <div className="w-full h-1 bg-slate-900 rounded-full overflow-hidden mb-6">
                 <motion.div 
-                  className="h-full bg-gradient-to-r from-blue-500 to-indigo-500"
+                  className="h-full bg-gradient-to-r from-[#ffd700] via-[#fff3b0] to-[#b8860b]"
                   initial={{ width: '25%' }}
                   animate={{ width: `${step * 25}%` }}
                   transition={{ duration: 0.3 }}
@@ -199,8 +199,8 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                     className="space-y-5"
                   >
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-slate-300 flex items-center gap-2">
-                        <User className="w-4 h-4 text-blue-400" />
+                      <label className="text-sm font-semibold text-[#DDEBFF] flex items-center gap-2">
+                        <User className="w-4 h-4 text-[#ffd700]" />
                         Họ và tên của bạn <span className="text-red-400">*</span>
                       </label>
                       <input
@@ -209,15 +209,15 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                         value={formData.fullName}
                         onChange={handleTextChange}
                         placeholder="Ví dụ: Nguyễn Văn Hải"
-                        className="w-full bg-slate-900/60 border border-slate-700/60 rounded-xl px-4 py-3 text-white placeholder-slate-500 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/20 transition-all text-sm"
+                        className="w-full bg-[#020617] border border-[#d4af37]/35 rounded-xl px-4 py-3 text-white placeholder-slate-500 outline-none focus:border-[#ffd700] focus:ring-1 focus:ring-[#ffd700]/20 transition-all text-sm font-sans"
                         required
                         id="form-full-name"
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-slate-300 flex items-center gap-2">
-                        <Phone className="w-4 h-4 text-blue-400" />
+                      <label className="text-sm font-semibold text-[#DDEBFF] flex items-center gap-2">
+                        <Phone className="w-4 h-4 text-[#ffd700]" />
                         Số điện thoại liên hệ <span className="text-red-400">*</span>
                       </label>
                       <input
@@ -226,11 +226,11 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                         value={formData.phone}
                         onChange={handleTextChange}
                         placeholder="Ví dụ: 0912345678"
-                        className="w-full bg-slate-900/60 border border-slate-700/60 rounded-xl px-4 py-3 text-white placeholder-slate-500 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/20 transition-all text-sm"
+                        className="w-full bg-[#020617] border border-[#d4af37]/35 rounded-xl px-4 py-3 text-white placeholder-slate-500 outline-none focus:border-[#ffd700] focus:ring-1 focus:ring-[#ffd700]/20 transition-all text-sm font-sans"
                         required
                         id="form-phone"
                       />
-                      <span className="text-xs text-slate-500 block">Số điện thoại dùng để kết nối Zalo gửi file và Brochure.</span>
+                      <span className="text-[10px] text-slate-400 block font-sans">Số điện thoại dùng để kết nối Zalo gửi file và Brochure hỗ trợ.</span>
                     </div>
                   </motion.div>
                 )}
@@ -243,8 +243,8 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                     className="space-y-5"
                   >
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-slate-300 flex items-center gap-2">
-                        <Building2 className="w-4 h-4 text-blue-400" />
+                      <label className="text-sm font-semibold text-[#DDEBFF] flex items-center gap-2">
+                        <Building2 className="w-4 h-4 text-[#ffd700]" />
                         Tên Công ty / Thương hiệu (nếu có)
                       </label>
                       <input
@@ -253,25 +253,25 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                         value={formData.companyName}
                         onChange={handleTextChange}
                         placeholder="Ví dụ: Cty Thiết Kế KĐéc / Showroom Hải Nam"
-                        className="w-full bg-slate-900/60 border border-slate-700/60 rounded-xl px-4 py-3 text-white placeholder-slate-500 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/20 transition-all text-sm"
+                        className="w-full bg-[#020617] border border-[#d4af37]/35 rounded-xl px-4 py-3 text-white placeholder-slate-500 outline-none focus:border-[#ffd700] focus:ring-1 focus:ring-[#ffd700]/20 transition-all text-sm font-sans"
                         id="form-company-name"
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-slate-300 flex items-center gap-2">
-                        <Users className="w-4 h-4 text-blue-400" />
+                      <label className="text-sm font-semibold text-[#DDEBFF] flex items-center gap-2">
+                        <Users className="w-4 h-4 text-[#ffd700]" />
                         Nhóm đối tác phù hợp nhất <span className="text-red-400">*</span>
                       </label>
                       <select
                         name="partnerGroup"
                         value={formData.partnerGroup}
                         onChange={handleTextChange}
-                        className="w-full bg-slate-900/80 border border-slate-700/60 rounded-xl px-4 py-3 text-white outline-none focus:border-blue-500 transition-all text-sm appearance-none"
+                        className="w-full bg-[#020617] border border-[#d4af37]/35 rounded-xl px-4 py-3 text-white outline-none focus:border-[#ffd700] transition-all text-sm appearance-none font-sans"
                         id="form-partner-group"
                       >
                         {partnerTypes_Vietnamese.map(t => (
-                          <option key={t.value} value={t.value} className="bg-slate-950 text-white py-2">
+                          <option key={t.value} value={t.value} className="bg-[#020617] text-white py-2">
                             {t.label}
                           </option>
                         ))}
@@ -279,8 +279,8 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-slate-300 flex items-center gap-2">
-                        <MapPin className="w-4 h-4 text-blue-400" />
+                      <label className="text-sm font-semibold text-[#DDEBFF] flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-[#ffd700]" />
                         Khu vực bạn muốn phát triển thị trường <span className="text-red-400">*</span>
                       </label>
                       <input
@@ -289,7 +289,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                         value={formData.region}
                         onChange={handleTextChange}
                         placeholder="Ví dụ: Hà Nội, Hải Phòng, Quảng Ninh..."
-                        className="w-full bg-slate-900/60 border border-slate-700/60 rounded-xl px-4 py-3 text-white placeholder-slate-500 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/20 transition-all text-sm"
+                        className="w-full bg-[#020617] border border-[#d4af37]/35 rounded-xl px-4 py-3 text-white placeholder-slate-500 outline-none focus:border-[#ffd700] focus:ring-1 focus:ring-[#ffd700]/20 transition-all text-sm font-sans"
                         required
                         id="form-region"
                       />
@@ -309,19 +309,19 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                       <button
                         type="button"
                         onClick={() => handleCheckboxChange('hasShowroom', !formData.hasShowroom)}
-                        className={`p-4 rounded-xl border flex flex-col items-center gap-3 text-center transition-all ${
+                        className={`p-4 rounded-xl border flex flex-col items-center gap-3 text-center transition-all cursor-pointer ${
                           formData.hasShowroom 
-                            ? 'bg-blue-500/10 border-blue-500 text-white glow-blue' 
-                            : 'bg-slate-900/40 border-slate-800 text-slate-400 hover:border-slate-700'
+                            ? 'bg-[#ffd700]/10 border-[#ffd700] text-white shadow-[0_0_20px_rgba(255,215,0,0.15)]' 
+                            : 'bg-[#020617]/50 border-[#d4af37]/20 text-slate-400 hover:border-[#ffd700]/40'
                         }`}
                         id="form-has-showroom-btn"
                       >
-                        <Store className={`w-8 h-8 ${formData.hasShowroom ? 'text-blue-400' : 'text-slate-500'}`} />
+                        <Store className={`w-8 h-8 ${formData.hasShowroom ? 'text-[#ffd700]' : 'text-slate-500'}`} />
                         <div>
                           <p className="text-sm font-semibold text-white">Bạn đã có Showroom chưa?</p>
                           <p className="text-xs text-slate-400 mt-1">Đã có mặt bằng trưng bày sản phẩm thực tế</p>
                         </div>
-                        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${formData.hasShowroom ? 'bg-blue-500/20 text-blue-300' : 'bg-slate-800 text-slate-400'}`}>
+                        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${formData.hasShowroom ? 'bg-[#ffd700]/20 text-[#ffd700]' : 'bg-[#020617] text-slate-400 border border-slate-800'}`}>
                           {formData.hasShowroom ? 'Đã có Showroom' : 'Chưa có / Đang xem xét'}
                         </span>
                       </button>
@@ -330,26 +330,26 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                       <button
                         type="button"
                         onClick={() => handleCheckboxChange('hasTechTeam', !formData.hasTechTeam)}
-                        className={`p-4 rounded-xl border flex flex-col items-center gap-3 text-center transition-all ${
+                        className={`p-4 rounded-xl border flex flex-col items-center gap-3 text-center transition-all cursor-pointer ${
                           formData.hasTechTeam 
-                            ? 'bg-indigo-500/10 border-indigo-500 text-white glow-blue' 
-                            : 'bg-slate-900/40 border-slate-800 text-slate-400 hover:border-slate-700'
+                            ? 'bg-[#ffd700]/10 border-[#ffd700] text-white shadow-[0_0_20px_rgba(255,215,0,0.15)]' 
+                            : 'bg-[#020617]/50 border-[#d4af37]/20 text-slate-400 hover:border-[#ffd700]/40'
                         }`}
                         id="form-has-tech-team-btn"
                       >
-                        <Wrench className={`w-8 h-8 ${formData.hasTechTeam ? 'text-indigo-400' : 'text-slate-500'}`} />
+                        <Wrench className={`w-8 h-8 ${formData.hasTechTeam ? 'text-[#ffd700]' : 'text-slate-500'}`} />
                         <div>
                           <p className="text-sm font-semibold text-white">Bạn đã có đội Kỹ thuật chưa?</p>
                           <p className="text-xs text-slate-400 mt-1">Sẵn sàng lắp đặt, bảo hành đường ống nước</p>
                         </div>
-                        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${formData.hasTechTeam ? 'bg-indigo-500/20 text-indigo-300' : 'bg-slate-800 text-slate-400'}`}>
+                        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${formData.hasTechTeam ? 'bg-[#ffd700]/20 text-[#ffd700]' : 'bg-[#020617] text-slate-400 border border-slate-800'}`}>
                           {formData.hasTechTeam ? 'Đã có đội kỹ thuật' : 'Chưa có (SHAHA hỗ trợ)'}
                         </span>
                       </button>
                     </div>
 
                     <div className="space-y-2">
-                      <label className="text-sm font-medium text-slate-300">
+                      <label className="text-sm font-medium text-[#DDEBFF]">
                         Mô tả sơ bộ tệp khách hàng hiện tại của bạn
                       </label>
                       <textarea
@@ -358,7 +358,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                         onChange={handleTextChange}
                         placeholder="Ví dụ: Đang phục vụ khoảng 150 khách xây biệt thự/năm, tệp khách MEP chung cư cao cấp..."
                         rows={3}
-                        className="w-full bg-slate-900/60 border border-slate-700/60 rounded-xl px-4 py-3 text-white placeholder-slate-500 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500/20 transition-all text-sm resize-none"
+                        className="w-full bg-[#020617] border border-[#d4af37]/35 rounded-xl px-4 py-3 text-white placeholder-slate-500 outline-none focus:border-[#ffd700] focus:ring-1 focus:ring-[#ffd700]/20 transition-all text-sm resize-none font-sans"
                         id="form-current-customers"
                       />
                     </div>
@@ -372,7 +372,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                     exit={{ opacity: 0, x: -20 }}
                     className="space-y-5"
                   >
-                    <label className="text-sm font-medium text-slate-300 block mb-2">
+                    <label className="text-sm font-semibold text-[#DDEBFF] block mb-2">
                       Chọn các hạng mục tài liệu và sự hỗ trợ bạn muốn nhận ngay:
                     </label>
                     <div className="grid grid-cols-1 gap-3">
@@ -384,21 +384,21 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                             key={n.value}
                             type="button"
                             onClick={() => handleNeedToggle(n.value)}
-                            className={`p-3.5 rounded-xl border flex items-center gap-3.5 text-left transition-all ${
+                            className={`p-3.5 rounded-xl border flex items-center gap-3.5 text-left transition-all cursor-pointer ${
                               isSelected 
-                                ? 'bg-blue-500/10 border-blue-500/60 text-white' 
-                                : 'bg-slate-900/40 border-slate-800 text-slate-300 hover:border-slate-700'
+                                ? 'bg-[#ffd700]/10 border-[#ffd700] text-white shadow-[0_0_15px_rgba(255,215,0,0.1)]' 
+                                : 'bg-[#020617]/50 border-slate-800 text-slate-300 hover:border-[#ffd700]/30'
                             }`}
                             id={`form-need-btn-${n.value}`}
                           >
-                            <div className={`p-2 rounded-lg ${isSelected ? 'bg-blue-500/20 text-blue-400' : 'bg-slate-800 text-slate-500'}`}>
+                            <div className={`p-2 rounded-lg ${isSelected ? 'bg-[#ffd700]/20 text-[#ffd700]' : 'bg-[#020617] text-slate-500'}`}>
                               <IconComponent className="w-5 h-5" />
                             </div>
-                            <span className="text-sm font-medium flex-1">{n.label}</span>
+                            <span className="text-sm font-semibold flex-1">{n.label}</span>
                             <div className={`w-5 h-5 rounded-md border flex items-center justify-center transition-all ${
-                              isSelected ? 'bg-blue-500 border-blue-500 text-white' : 'border-slate-700 bg-slate-900'
+                              isSelected ? 'bg-[#ffd700] border-[#ffd700] text-slate-900' : 'border-slate-700 bg-[#020617]'
                             }`}>
-                              {isSelected && <CheckCircle2 className="w-4.5 h-4.5 stroke-[2.5]" />}
+                              {isSelected && <CheckCircle2 className="w-4 h-4 stroke-[2.5]" />}
                             </div>
                           </button>
                         );
@@ -414,7 +414,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                   <button
                     type="button"
                     onClick={handlePrev}
-                    className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium border border-slate-700 text-slate-300 hover:bg-slate-800 transition-all"
+                    className="flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-medium border border-[#d4af37]/35 text-slate-300 hover:bg-[#ffd700]/5 hover:text-white transition-all cursor-pointer"
                     id="form-prev-btn"
                   >
                     <ChevronLeft className="w-4 h-4" />
@@ -428,22 +428,22 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                   <button
                     type="button"
                     onClick={handleNext}
-                    className="flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-medium bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white glow-blue transition-all ml-auto cursor-pointer"
+                    className="flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold bg-gradient-to-r from-[#ffd700] via-[#fff3b0] to-[#b8860b] text-slate-950 shadow-[0_0_20px_rgba(255,215,0,0.15)] hover:scale-102 transition-all ml-auto cursor-pointer"
                     id="form-next-btn"
                   >
                     Tiếp tục
-                    <ChevronRight className="w-4 h-4" />
+                    <ChevronRight className="w-4 h-4 text-slate-950" />
                   </button>
                 ) : (
                   <button
                     type="submit"
                     disabled={loading}
-                    className="flex items-center gap-2 px-7 py-3 rounded-xl text-sm font-bold bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-600 hover:from-blue-400 hover:via-indigo-500 hover:to-purple-500 text-white glow-blue-strong transition-all ml-auto cursor-pointer disabled:opacity-50"
+                    className="flex items-center gap-2 px-7 py-3 rounded-xl text-sm font-black bg-gradient-to-r from-[#ffd700] via-[#fff3b0] to-[#b8860b] text-slate-950 shadow-[0_0_25px_rgba(255,215,0,0.3)] hover:scale-102 hover:brightness-110 transition-all ml-auto cursor-pointer disabled:opacity-50"
                     id="form-submit-btn"
                   >
                     {loading ? (
                       <>
-                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        <div className="w-4 h-4 border-2 border-slate-950/30 border-t-slate-950 rounded-full animate-spin" />
                         Đang xử lý...
                       </>
                     ) : (
@@ -463,19 +463,19 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
               className="text-center py-10 space-y-6 relative z-10"
               id="form-success-container"
             >
-              <div className="w-20 h-20 bg-blue-500/10 border border-blue-500/30 rounded-full flex items-center justify-center mx-auto text-blue-400 glow-blue">
+              <div className="w-20 h-20 bg-[#ffd700]/10 border border-[#ffd700]/30 rounded-full flex items-center justify-center mx-auto text-[#ffd700] shadow-[0_0_20px_rgba(255,215,0,0.2)]">
                 <CheckCircle2 className="w-12 h-12 stroke-[1.5]" />
               </div>
 
-              <div className="space-y-2">
-                <h3 className="text-3xl font-display font-bold text-white tracking-tight">
+              <div className="space-y-3">
+                <h3 className="text-3xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase">
                   Đăng Ký Thành Công!
                 </h3>
-                <p className="text-emerald-400 font-medium text-sm">
-                  Cảm ơn tác giả {successLead.fullName} đã tin chọn đồng hành cùng SHAHA.
+                <p className="text-[#ffd700] font-semibold text-sm">
+                  Cảm ơn đối tác {successLead.fullName} đã tin chọn đồng hành cùng SHAHA.
                 </p>
-                <div className="max-w-md mx-auto p-4 rounded-2xl bg-slate-900/80 border border-slate-800 text-slate-300 text-sm leading-relaxed mt-4">
-                  Một chuyên viên phát triển đối tác cấp cao của <span className="text-blue-400 font-semibold">SHAHA Việt Nam</span> sẽ liên hệ trực tiếp cho bạn qua số điện thoại <span className="text-white underline">{successLead.phone}</span> để trao đổi chi tiết chính sách và thống nhất lịch hẹn.
+                <div className="max-w-md mx-auto p-5 rounded-2xl bg-[#020617]/80 border border-[#d4af37]/35 text-slate-300 text-sm leading-relaxed mt-4">
+                  Một chuyên viên phát triển đối tác cấp cao của <span className="text-[#ffd700] font-bold">SHAHA Việt Nam</span> sẽ liên hệ trực tiếp cho bạn qua số điện thoại <span className="text-white underline font-mono">{successLead.phone}</span> để trao đổi chi tiết chính sách và thống nhất lịch hẹn.
                 </div>
               </div>
 
@@ -498,7 +498,7 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                       needs: []
                     });
                   }}
-                  className="px-5 py-2.5 rounded-xl text-xs font-semibold border border-slate-700 text-slate-400 hover:text-white hover:bg-slate-800/80 transition-all"
+                  className="px-5 py-2.5 rounded-xl text-xs font-semibold border border-slate-705 text-slate-400 hover:text-white hover:bg-slate-800/80 transition-all cursor-pointer"
                   id="form-reset-btn"
                 >
                   Đăng ký tài khoản khác
@@ -510,10 +510,10 @@ export default function LeadForm({ onSuccess }: LeadFormProps) {
                     const el = document.getElementById('ai-chatbox-trigger');
                     if (el) el.click();
                   }}
-                  className="px-6 py-2.5 rounded-xl text-xs font-bold bg-blue-600 hover:bg-blue-500 text-white flex items-center gap-2 justify-center transition-all glow-blue hover:scale-102"
+                  className="px-6 py-2.5 rounded-xl text-xs font-bold bg-gradient-to-r from-[#ffd700] via-[#fff3b0] to-[#b8860b] text-slate-950 flex items-center gap-2 justify-center transition-all shadow-[0_0_20px_rgba(255,215,0,0.25)] hover:scale-102"
                 >
                   <MessageSquare className="w-4 h-4 animate-bounce" />
-                  Trò chuyện với AI Advisor về chính sách
+                  Trò chuyện với AI Advisor
                 </a>
               </div>
             </motion.div>
