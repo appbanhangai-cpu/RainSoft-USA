@@ -209,7 +209,7 @@ export default function App() {
         {/* Soft center-right gold & blue planetary light glow */}
         <div className="absolute top-[40%] right-[10%] w-[550px] h-[550px] bg-gradient-to-tr from-[#00D4FF]/10 to-[#ffd700]/5 rounded-full blur-[140px] pointer-events-none animate-pulse-subtle" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative" style={{ zoom: 0.8 }}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left Column (7 of 12) - Majestic Texts and Grid Badges */}
@@ -327,7 +327,7 @@ export default function App() {
               <div className="absolute w-[90%] h-[90%] rounded-full border-2 border-dashed border-[#ffd700]/5 pointer-events-none" />
 
               {/* The frame box */}
-              <div className="relative w-full max-w-[280px] xs:max-w-[325px] sm:max-w-sm rounded-2xl xs:rounded-[2rem] sm:rounded-[2.5rem] bg-gradient-to-b from-[#03142d]/85 via-[#020d1c]/90 to-[#01091a]/95 border-2 border-[#ffd700]/25 p-3 xs:p-4.5 shadow-[0_20px_50px_rgba(1,9,26,0.95),0_0_25px_rgba(0,212,255,0.12)] overflow-hidden group">
+              <div className="relative w-full max-w-[210px] xs:max-w-[250px] sm:max-w-[320px] md:max-w-sm rounded-[1.25rem] xs:rounded-[2rem] sm:rounded-[2.5rem] bg-gradient-to-b from-[#03142d]/85 via-[#020d1c]/90 to-[#01091a]/95 border-2 border-[#ffd700]/25 p-2 xs:p-3 sm:p-4.5 shadow-[0_15px_40px_rgba(1,9,26,0.95),0_0_20px_rgba(0,212,255,0.1)] overflow-hidden group">
                 
                 {/* Floating bubbles elements inside representation */}
                 <div className="absolute top-[20%] left-[10%] w-6 h-6 rounded-full bg-[#00D4FF]/10 blur-[1px] animate-bounce" style={{ animationDuration: '6s' }} />
