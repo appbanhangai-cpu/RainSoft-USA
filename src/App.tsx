@@ -24,7 +24,14 @@ import {
   CheckCircle,
   Clock,
   Store,
-  ChevronDown
+  ChevronDown,
+  Handshake,
+  Rocket,
+  FileEdit,
+  MessageSquare,
+  Diamond,
+  Download,
+  Globe
 } from 'lucide-react';
 
 import { PARTNER_GROUPS, SUPPORT_PROGRAMS, DISCOVERY_STAGES, Lead } from './types';
@@ -35,6 +42,7 @@ import AdminPanel from './components/AdminPanel';
 export default function App() {
   const [activeTab, setActiveTab] = useState('showroom');
   const [activeStage, setActiveStage] = useState(1);
+  const [selectedProductTab, setSelectedProductTab] = useState<'image1' | 'image2'>('image1');
   const [showAdmin, setShowAdmin] = useState(false);
   const [leadsSyncedCounter, setLeadsSyncedCounter] = useState(0);
   const [showNotification, setShowNotification] = useState(false);
@@ -190,257 +198,1028 @@ export default function App() {
         )}
       </AnimatePresence>
 
-      {/* SECTION 1: HERO - BANNER ĐẦU TRANG THEO PHONG CÁCH POSTER HOA KỲ VY CHUẨN */}
-      <section className="relative pt-12 pb-24 sm:pb-36 overflow-hidden z-10 us-flag-bg" id="hero">
+      {/* SECTION 1: HERO - BANNER ĐẦU TRANG PHONG CÁCH QUẦN THỂ SIÊU LUXURY HOA KỲ */}
+      <section className="relative pt-12 pb-24 sm:pb-36 overflow-hidden z-10" id="hero">
         
-        {/* Diagonal gold lighting streaks across section background */}
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-[#020617] via-[#061B33] to-[#020617] opacity-90 -z-10" />
-        <div className="absolute -top-[20%] -left-[10%] w-[60%] h-[120%] bg-gradient-to-br from-transparent via-[#d4af37]/5 to-transparent rotate-12 pointer-events-none" />
-        <div className="absolute -bottom-[20%] -right-[10%] w-[60%] h-[120%] bg-gradient-to-tl from-transparent via-[#00D4FF]/5 to-transparent rotate-12 pointer-events-none" />
+        {/* Deep starry space and dynamic water ambient backgrounds */}
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#01091a] via-[#02132b] to-[#01091a] -z-10" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(0,212,255,0.12),transparent_45%)] -z-10" />
+        <div className="absolute -top-[10%] -left-[5%] w-[50%] h-[100%] bg-gradient-to-br from-transparent via-[#ffd700]/3 to-transparent rotate-12 pointer-events-none" />
         
-        {/* Soft center glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-indigo-500/5 rounded-full blur-3xl pointer-events-none animate-pulse-subtle" />
+        {/* Soft center-right gold & blue planetary light glow */}
+        <div className="absolute top-[40%] right-[10%] w-[550px] h-[550px] bg-gradient-to-tr from-[#00D4FF]/10 to-[#ffd700]/5 rounded-full blur-[140px] pointer-events-none animate-pulse-subtle" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            {/* Left Content Column (7 of 12) */}
+            {/* Left Column (7 of 12) - Majestic Texts and Grid Badges */}
             <div className="lg:col-span-7 text-left space-y-8">
               
-              {/* Premium Golden Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#03142d]/80 border border-[#d4af37]/45 text-amber-300 text-[11px] font-mono font-bold tracking-wider uppercase shadow-[0_0_15px_rgba(255,215,0,0.1)]">
-                <Sparkles className="w-4 h-4 text-[#ffd700] animate-pulse" />
+              {/* Premium Golden Badge (Matched strictly with Image 1 border style) */}
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#03142d]/90 border border-[#ffd700]/45 text-amber-300 text-[10px] sm:text-xs font-mono font-black tracking-[0.08em] uppercase shadow-[0_0_20px_rgba(255,215,0,0.15)]">
+                <span className="text-[#ffd700] text-sm animate-pulse">★</span>
                 <span>RainSoft USA Since 1953 • Chuẩn Mỹ Hoàn Toàn</span>
               </div>
 
-              {/* Majestic Metallic Heading with heavy serif/display feel */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-display font-black tracking-tight leading-tight uppercase">
-                <span className="text-gold-metallic block lg:inline-block">Trở thành đối tác</span><br className="hidden lg:block"/>
-                <span className="text-transparent bg-gradient-to-r from-white via-slate-100 to-slate-350 bg-clip-text">phát triển RainSoft</span> <br />
-                <span className="text-[#00D4FF] text-2xl sm:text-3.5xl tracking-widest font-mono font-bold uppercase block mt-2">tại việt nam</span>
-              </h1>
-
-              {/* Hero Detailed Description */}
-              <p className="text-sm sm:text-base text-[#DDEBFF]/90 leading-relaxed max-w-2xl font-normal">
-                Cùng <strong className="text-white font-extrabold">SHAHA Việt Nam</strong> xây dựng thống trị thị trường lọc tổng cao cấp toàn cầu. RainSoft USA từ 1953 – thương hiệu lọc tổng xa xỉ hàng đầu thế giới, định vị cho nhóm khách hàng biệt thự, cực phẩm villa, căn hộ duplex sang trọng, và các gia đình sở hữu cuộc sống thượng đỉnh có tiêu chuẩn sinh hoạt cao nhất.
-              </p>
-
-              {/* 4 Custom Elegant Mini Badges with Thin gold Borders */}
-              <div className="grid grid-cols-2 gap-3.5 max-w-xl">
-                <div className="px-3.5 py-2.5 rounded-xl bg-[#03142d]/60 border border-[#d4af37]/25 flex items-center gap-2 bg-slate-950/20">
-                  <span className="text-[#ffd700] text-sm font-bold">✓</span>
-                  <span className="text-[11px] font-bold text-[#DDEBFF]/90 tracking-wide">Hiệu năng xử lý siêu bứt phá</span>
-                </div>
-                <div className="px-3.5 py-2.5 rounded-xl bg-[#03142d]/60 border border-[#d4af37]/25 flex items-center gap-2 bg-slate-950/20">
-                  <span className="text-[#ffd700] text-sm font-bold">✓</span>
-                  <span className="text-[11px] font-bold text-[#DDEBFF]/90 tracking-wide">Bảo hành TRỌN ĐỜI từ Hoa Kỳ</span>
-                </div>
-                <div className="px-3.5 py-2.5 rounded-xl bg-[#03142d]/60 border border-[#d4af37]/25 flex items-center gap-2 bg-slate-950/20">
-                  <span className="text-[#ffd700] text-sm font-bold">✓</span>
-                  <span className="text-[11px] font-bold text-[#DDEBFF]/90 tracking-wide">Hỗ trợ Showroom và 3D tủ mẫu</span>
-                </div>
-                <div className="px-3.5 py-2.5 rounded-xl bg-[#03142d]/60 border border-[#d4af37]/25 flex items-center gap-2 bg-slate-950/20">
-                  <span className="text-[#ffd700] text-sm font-bold">✓</span>
-                  <span className="text-[11px] font-bold text-[#DDEBFF]/90 tracking-wide">Đào tạo, Vali Test Kit thực tế</span>
-                </div>
+              {/* High-End Metallic Heading with Laser Gold and Vivid Cyan */}
+              <div className="space-y-2">
+                <h1 className="text-3xl sm:text-5xl lg:text-[5.5rem] font-display font-black tracking-tight leading-[1.05] uppercase">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffd700] via-[#fff3b0] to-[#b8860b] drop-shadow-[0_3px_12px_rgba(255,215,0,0.35)] block">
+                    Trở thành đối tác
+                  </span>
+                  <span className="text-white block mt-1 tracking-tight">
+                    phát triển RainSoft
+                  </span>
+                </h1>
+                <span className="text-[#00D4FF] text-2xl sm:text-4xl lg:text-[2.6rem] tracking-[0.25em] font-mono font-black uppercase block pt-2 drop-shadow-[0_0_15px_rgba(0,212,255,0.4)]">
+                  tại việt nam
+                </span>
               </div>
 
-              {/* Dual Action CTAs with metallic shine */}
-              <div className="flex flex-col sm:flex-row items-center gap-4 pt-2 max-w-md">
+              {/* Descriptive context matching precisely */}
+              <p className="text-xs sm:text-sm text-[#DDEBFF]/95 leading-relaxed max-w-2xl font-normal font-sans">
+                Cùng <strong className="text-white font-extrabold border-b border-[#00D4FF]/45 pb-0.5">SHAHA Việt Nam</strong> xây dựng hệ sinh thái lọc tổng cao cấp toàn cầu. RainSoft USA từ 1953 – thương hiệu lọc tổng xa xỉ hàng đầu thế giới, định vị cho nhóm khách hàng biệt thự, villa, penthouse, căn hộ duplex sang trọng, và các gia đình sở hữu cuộc sống thượng đỉnh có tiêu chuẩn sinh hoạt cao nhất.
+              </p>
+
+              {/* 4 Custom Feature badging cards arranged exactly like Image 1 2x2 grid with high visual rhythm */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl">
+                
+                {/* Badge 1 */}
+                <div className="p-4 rounded-2xl bg-[#03142d]/80 border border-[#ffd700]/30 hover:border-[#ffd700] hover:bg-[#071F42] hover:shadow-[0_0_20px_rgba(255,215,0,0.15)] duration-300 flex items-center gap-4 group">
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#ffd700] to-[#b8860b] flex items-center justify-center text-slate-950 shadow-[0_3px_10px_rgba(255,215,0,0.3)] shrink-0 transition-transform group-hover:scale-110">
+                    <ShieldCheck className="w-5.5 h-5.5" />
+                  </div>
+                  <div>
+                    <h4 className="text-[11px] font-sans font-black text-white tracking-widest uppercase">HIỆU NĂNG XỬ LÝ</h4>
+                    <p className="text-[10px] text-[#00D4FF] font-mono tracking-wider font-bold mt-0.5">SIÊU BỨT PHÁ</p>
+                  </div>
+                </div>
+
+                {/* Badge 2 */}
+                <div className="p-4 rounded-2xl bg-[#03142d]/80 border border-[#ffd700]/30 hover:border-[#ffd700] hover:bg-[#071F42] hover:shadow-[0_0_20px_rgba(255,215,0,0.15)] duration-300 flex items-center gap-4 group">
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#ffd700] to-[#b8860b] flex items-center justify-center text-slate-950 shadow-[0_3px_10px_rgba(255,215,0,0.3)] shrink-0 transition-transform group-hover:scale-110">
+                    <Award className="w-5.5 h-5.5" />
+                  </div>
+                  <div>
+                    <h4 className="text-[11px] font-sans font-black text-white tracking-widest uppercase">BẢO HÀNH TRỌN ĐỜI</h4>
+                    <p className="text-[10px] text-[#ffd700] font-mono tracking-wider font-bold mt-0.5">TỪ HOA KỲ</p>
+                  </div>
+                </div>
+
+                {/* Badge 3 */}
+                <div className="p-4 rounded-2xl bg-[#03142d]/80 border border-[#ffd700]/30 hover:border-[#ffd700] hover:bg-[#071F42] hover:shadow-[0_0_20px_rgba(255,215,0,0.15)] duration-300 flex items-center gap-4 group">
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#ffd700] to-[#b8860b] flex items-center justify-center text-slate-950 shadow-[0_3px_10px_rgba(255,215,0,0.3)] shrink-0 transition-transform group-hover:scale-110">
+                    <Store className="w-5.5 h-5.5" />
+                  </div>
+                  <div>
+                    <h4 className="text-[11px] font-sans font-black text-white tracking-widest uppercase">HỖ TRỢ SHOWROOM</h4>
+                    <p className="text-[10px] text-[#00D4FF] font-mono tracking-wider font-bold mt-0.5">VÀ 3D TỦ MẪU</p>
+                  </div>
+                </div>
+
+                {/* Badge 4 */}
+                <div className="p-4 rounded-2xl bg-[#03142d]/80 border border-[#ffd700]/30 hover:border-[#ffd700] hover:bg-[#071F42] hover:shadow-[0_0_20px_rgba(255,215,0,0.15)] duration-300 flex items-center gap-4 group">
+                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#ffd700] to-[#b8860b] flex items-center justify-center text-slate-950 shadow-[0_3px_10px_rgba(255,215,0,0.3)] shrink-0 transition-transform group-hover:scale-110">
+                    <Droplets className="w-5.5 h-5.5" />
+                  </div>
+                  <div>
+                    <h4 className="text-[11px] font-sans font-black text-white tracking-widest uppercase">ĐÀO TẠO, VÂN MẪU</h4>
+                    <p className="text-[10px] text-[#ffd700] font-mono tracking-wider font-bold mt-0.5">TEST KIT THỰC TẾ</p>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Dual Action CTAs with extreme premium polish and precise text labels */}
+              <div className="flex flex-col sm:flex-row items-center gap-4 pt-2 max-w-xl">
                 <button
                   onClick={() => {
                     const el = document.getElementById('onboarding');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="w-full sm:w-auto px-8 py-4.5 rounded-2xl font-display font-black text-xs uppercase tracking-widest bg-gradient-to-r from-[#fff3b0] via-[#ffd700] to-[#b8860b] hover:from-[#ffffff] hover:to-[#ffd700] text-[#020617] hover:shadow-[0_0_35px_rgba(255,215,0,0.5)] group cursor-pointer flex items-center justify-center gap-2 border border-[#ffd700]/30 transition-all btn-shine-effect"
+                  className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#fff3b0] via-[#ffd700] to-[#b8860b] hover:from-white hover:to-[#ffd700] text-slate-950 font-sans font-black text-xs uppercase tracking-widest rounded-2xl shadow-[0_4px_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_35px_rgba(255,215,0,0.5)] group cursor-pointer flex items-center justify-center gap-3 border border-[#ffd700]/40 transition-all duration-350"
                   id="hero-register-btn"
                 >
-                  Đăng ký trở thành đối tác
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform text-[#020617]" />
+                  <span>Đăng ký trở thành đối tác</span>
+                  <ArrowRight className="w-4 h-4 text-slate-950 group-hover:translate-x-1.5 duration-200" />
                 </button>
+                
                 <button
                   onClick={() => {
                     const el = document.getElementById('supports');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="w-full sm:w-auto px-8 py-4.5 rounded-2xl font-display font-bold text-xs uppercase tracking-widest bg-[#03142d]/90 hover:bg-[#0b2d4d]/90 border border-[#d4af37]/35 text-[#fffcf0] hover:text-[#ffd700] hover:shadow-[0_0_20px_rgba(0,212,255,0.2)] flex items-center justify-center gap-1.5 transition-all"
+                  className="w-full sm:w-auto px-8 py-4 bg-[#020d1c]/90 hover:bg-[#07162b] border-2 border-[#d4af37]/40 hover:border-[#ffd700] text-white hover:text-[#ffd700] font-sans font-black text-xs uppercase tracking-widest rounded-2xl shadow-[0_0_15px_rgba(3,20,45,0.4)] cursor-pointer flex items-center justify-center gap-2.5 transition-all duration-350"
                   id="hero-docs-btn"
                 >
-                  Nhận bộ tài liệu hợp tác
-                  <FileText className="w-4 h-4 text-[#ffd700]" />
+                  <span>Nhận bộ tài liệu hợp tác</span>
+                  <Download className="w-4 h-4 text-[#ffd700]" />
                 </button>
               </div>
 
             </div>
 
-            {/* Right Pedestal Column (5 of 12) */}
+            {/* Right Column (5 of 12) - Transparent Cyber Glass Showcase Sitting beautiful generated photo */}
             <div className="lg:col-span-5 flex items-center justify-center relative">
               
-              {/* Glowing decorative halo behind product */}
-              <div className="absolute w-72 h-72 bg-gradient-to-tr from-[#00D4FF]/20 via-[#0B2D4D]/10 to-[#ffd700]/10 rounded-full blur-3xl pointer-events-none" />
+              {/* Starry ring aura behind product stage */}
+              <div className="absolute w-80 h-80 rounded-full border border-[#00D4FF]/10 animate-spin-slow pointer-events-none" />
+              <div className="absolute w-[95%] h-[95%] rounded-full border-2 border-dashed border-[#ffd700]/5 pointer-events-none" />
 
-              {/* Interactive Luxury 3D-effect Pedestal */}
-              <div className="relative w-full max-w-sm justify-center items-center flex min-h-[420px]">
+              {/* The frame box */}
+              <div className="relative w-full max-w-sm rounded-[2.5rem] bg-gradient-to-b from-[#03142d]/85 via-[#020d1c]/90 to-[#01091a]/95 border-2 border-[#ffd700]/25 p-4.5 shadow-[0_25px_60px_rgba(1,9,26,0.9),0_0_30px_rgba(0,212,255,0.15)] overflow-hidden group">
                 
-                {/* Metallic Gold Circular Pedestal Platform */}
-                <div className="absolute bottom-6 w-72 h-32 bg-gradient-to-b from-[#0b2d4d] via-[#061b33] to-[#020617] rounded-full border-2 border-[#d4af37]/50 shadow-[0_20px_50px_rgba(0,212,255,0.4),0_0_30px_rgba(255,215,0,0.25)] flex items-center justify-center">
-                  {/* Rotating neon circle lines */}
-                  <div className="w-[90%] h-[85%] rounded-full border border-dashed border-[#00D4FF]/40 animate-spin-slow" />
-                  <div className="absolute w-[80%] h-[75%] rounded-full border border-[#d4af37]/20" />
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-[#00D4FF]/10 rounded-full blur-lg" />
-                  
-                  {/* Neon Cyan Spotlights */}
-                  <div className="absolute -top-1 left-1/4 w-3 h-3 bg-[#00D4FF] rounded-full blur-[1px] animate-ping" />
-                  <div className="absolute -top-1 right-1/4 w-3 h-3 bg-[#00D4FF] rounded-full blur-[1px] animate-ping" style={{ animationDelay: '1.2s' }} />
+                {/* Floating bubbles elements inside representation */}
+                <div className="absolute top-[20%] left-[10%] w-6 h-6 rounded-full bg-[#00D4FF]/10 blur-[1px] animate-bounce" style={{ animationDuration: '6s' }} />
+                <div className="absolute bottom-[25%] right-[8%] w-8 h-8 rounded-full bg-[#ffd700]/10 blur-[2px] animate-bounce" style={{ animationDuration: '4.5s', animationDelay: '1s' }} />
+
+                {/* Golden Shield Brand Stamp atop the photo frame (matches top-right stamp in Image 1) */}
+                <div className="absolute top-4 right-4 z-20 w-24 h-24 bg-gradient-to-b from-[#b8860b] via-[#ffd700] to-[#8b6508] p-[1.5px] rounded-2xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-300 pointer-events-none">
+                  <div className="w-full h-full bg-slate-950 rounded-[14px] p-2 flex flex-col items-center justify-center text-center">
+                    <div className="flex gap-0.5 text-[#ffd700]">
+                      <span className="text-[8px]">★</span>
+                      <span className="text-[10px] -mt-1 font-bold">★</span>
+                      <span className="text-[8px]">★</span>
+                    </div>
+                    <span className="text-[9px] font-display font-black text-white leading-none tracking-wider mt-0.5">RAINSOFT</span>
+                    <span className="text-[12px] font-display font-black text-transparent bg-clip-text bg-gradient-to-b from-[#ffd700] via-[#fff3b0] to-[#b8860b] leading-none tracking-widest mt-1 block">USA</span>
+                    <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-[#ffd700] to-transparent my-1" />
+                    <span className="text-[6px] font-mono text-slate-400 uppercase tracking-widest font-bold">SINCE 1933</span>
+                  </div>
                 </div>
 
-                {/* Luxury Flagship Water Treatment Softener System vector assembly */}
-                <div className="relative z-10 flex items-end gap-6 pb-20 justify-center h-full">
+                {/* Majestic 3D Generated Photo showing systems on podium */}
+                <div className="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden border border-slate-800 bg-[#020d1c] shadow-inner">
+                  <img
+                    src="/src/assets/images/hero_product_pedestal_1781703353546.jpg"
+                    alt="Hệ thống lọc mềm tổng RainSoft cao cấp chuẩn Mỹ trên bục hào quang"
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
                   
-                  {/* TANK 1: Premium Softener Cylinder (Silver-platinum chrome styling) */}
-                  <div className="relative w-[70px] h-[240px] rounded-full bg-gradient-to-b from-slate-100 via-slate-400 to-slate-900 border-2 border-slate-300 shadow-[0_10px_30px_rgba(0,212,255,0.3)] flex flex-col justify-between py-8 items-center transform hover:translate-y-[-5px] transition-transform duration-500">
-                    {/* Real gloss reflection lines */}
-                    <div className="absolute top-0 bottom-0 left-2.5 w-2 bg-white/20 blur-[0.5px]" />
-                    <div className="absolute top-0 bottom-0 right-3.5 w-1 bg-black/30" />
-                    
-                    {/* Metallic gold plate ribbon */}
-                    <div className="w-10 h-7 bg-gradient-to-r from-[#ffd700] via-[#b8860b] to-[#ffd700] rounded border border-[#fff3b0] flex items-center justify-center text-[10px] font-black text-[#020617] tracking-wider shadow">
-                      USA
-                    </div>
-
-                    {/* Laser engraved certification ring */}
-                    <div className="w-full h-1 bg-[#00D4FF]/80 shadow-[0_0_8px_rgba(0,212,255,0.8)]" />
-
-                    {/* Bottom base support */}
-                    <div className="w-[85%] h-3 bg-slate-950 rounded-b-full border-t border-slate-700" />
-                  </div>
-
-                  {/* EC5 Intelligent gold valve control box attached atop Tank 1 */}
-                  <div className="absolute left-[20px] top-[14px] w-14 h-14 bg-slate-950 border-2 border-[#ffd700] rounded-xl flex flex-col items-center justify-between p-1.5 shadow-[0_0_20px_rgba(255,215,0,0.4)]">
-                    {/* Simulated LCD Screen */}
-                    <div className="w-full h-[18px] bg-cyan-950 rounded border border-cyan-500/50 flex items-center justify-center overflow-hidden">
-                      <span className="text-[7px] font-mono text-[#00D4FF] tracking-wider animate-pulse font-bold">EC5 READY</span>
-                    </div>
-                    {/* Status grid lights */}
-                    <div className="w-full flex justify-between items-center px-0.5 mt-1">
-                      <span className="w-2 h-2 bg-emerald-500 rounded-full animate-ping" />
-                      <span className="text-[6px] font-mono text-slate-400">AMER.</span>
-                      <span className="w-1.5 h-1.5 bg-[#ffd700] rounded-full" />
-                    </div>
-                  </div>
-
-                  {/* TANK 2: Elegant Salt Cabinet (Premium royal blue glassmorphic container) */}
-                  <div className="relative w-24 h-[190px] rounded-3xl bg-gradient-to-b from-[#0b2d4d] via-[#061b33] to-[#020617] border-2 border-[#00D4FF]/40 shadow-[0_15px_35px_rgba(0,212,255,0.25)] flex flex-col items-center justify-between py-6 transform hover:translate-y-[-5px] transition-transform duration-500">
-                    {/* Highlights */}
-                    <div className="absolute top-0 bottom-0 left-3 w-1.5 bg-white/10 blur-[0.5px]" />
-                    <div className="w-[80%] h-1 bg-[#d4af37]/30 rounded-full" />
-                    
-                    {/* Gold brand emblem */}
-                    <div className="px-2.5 py-1 rounded-md border border-[#d4af37]/35 bg-slate-950/90 shadow-[0_0_10px_rgba(255,215,0,0.15)] flex flex-col items-center">
-                      <span className="text-[7px] font-mono font-black text-[#ffd700] tracking-widest uppercase">RAINSOFT</span>
-                      <span className="text-[5px] text-slate-400 uppercase scale-90">WATER TREATMENT</span>
-                    </div>
-
-                    {/* Clear-water viewing slot panel */}
-                    <div className="w-1.5 h-16 bg-gradient-to-b from-cyan-400 via-blue-500 to-indigo-600 rounded-full blur-[0.5px] shadow-inner" />
-                  </div>
-
+                  {/* Subtle gloss overlay reflection */}
+                  <div className="absolute top-0 bottom-0 left-[-150%] w-[100%] bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-[-25deg] transition-all duration-[1200ms] group-hover:left-[200%]" />
                 </div>
 
-                {/* Sparkling gold particles and light splashes floating above platform */}
-                <div className="absolute bottom-16 left-6 w-8 h-8 rounded-full bg-[#00D4FF]/25 blur-sm animate-bounce" style={{ animationDuration: '4.5s' }} />
-                <div className="absolute bottom-12 right-6 w-10 h-10 rounded-full bg-[#ffd700]/15 blur-sm animate-bounce" style={{ animationDuration: '6s', animationDelay: '1.5s' }} />
+                {/* Caption below image representing premium hardware */}
+                <div className="pt-3 pb-1 text-center">
+                  <span className="text-[10px] font-mono text-amber-200 tracking-widest font-black uppercase">RainSoft EC4 Softener & Carbon Filter Q2</span>
+                  <p className="text-[9px] text-[#DDEBFF]/65 mt-1 font-sans">Vật trưng bày tại Showroom SHAHA Việt Nam</p>
+                </div>
 
               </div>
 
             </div>
 
           </div>
+
+          {/* Majestic Trust Badges Bar (Matched strictly with the 5 columns at the bottom of Image 1) */}
+          <div className="w-full border-t border-b border-[#d4af37]/35 bg-[#03142d]/75 backdrop-blur-md py-6 px-6 rounded-[2rem] mt-20 shadow-[0_0_30px_rgba(255,215,0,0.06)] relative overflow-hidden">
+            <div className="absolute bottom-[-10%] left-[20%] w-32 h-32 bg-cyan-500/5 rounded-full blur-2xl pointer-events-none" />
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-left relative z-10">
+              
+              {/* Col 1 */}
+              <div className="flex items-start gap-3 lg:border-r lg:border-slate-800/80 pr-3">
+                <div className="w-10 h-10 rounded-full border border-[#d4af37]/35 flex items-center justify-center bg-slate-900 shadow-[0_0_10px_rgba(255,215,0,0.1)] shrink-0 font-sans text-lg">
+                  🇺🇸
+                </div>
+                <div>
+                  <h5 className="text-xs font-display font-black text-white uppercase tracking-wider">Thương hiệu Mỹ</h5>
+                  <p className="text-[10px] text-[#DDEBFF]/80 mt-1 leading-snug">Hơn 70 năm kinh nghiệm xử lý nước hàng đầu</p>
+                </div>
+              </div>
+
+              {/* Col 2 */}
+              <div className="flex items-start gap-3 lg:border-r lg:border-slate-800/80 pr-3">
+                <div className="w-10 h-10 rounded-full border border-[#d4af37]/35 flex items-center justify-center bg-gradient-to-br from-[#ffd700]/10 to-[#b8860b]/10 text-[#ffd700] shadow-[0_0_10px_rgba(255,215,0,0.1)] shrink-0">
+                  <Diamond className="w-5 h-5 text-[#ffd700]" />
+                </div>
+                <div>
+                  <h5 className="text-xs font-display font-black text-white uppercase tracking-wider">Định vị cao cấp</h5>
+                  <p className="text-[10px] text-[#DDEBFF]/80 mt-1 leading-snug">Phân khúc biệt thự, villa, penthouse, duplex</p>
+                </div>
+              </div>
+
+              {/* Col 3 */}
+              <div className="flex items-start gap-3 lg:border-r lg:border-slate-800/80 pr-3">
+                <div className="w-10 h-10 rounded-full border border-[#d4af37]/35 flex items-center justify-center bg-gradient-to-br from-[#00D4FF]/10 to-indigo-505/10 text-[#00D4FF] shadow-[0_0_10px_rgba(0,212,255,0.1)] shrink-0">
+                  <Globe className="w-5 h-5 text-[#00D4FF]" />
+                </div>
+                <div>
+                  <h5 className="text-xs font-display font-black text-white uppercase tracking-wider">Công nghệ mới</h5>
+                  <p className="text-[10px] text-[#DDEBFF]/80 mt-1 leading-snug">Hiệu suất vượt trội, tiết kiệm điện, nước, muối</p>
+                </div>
+              </div>
+
+              {/* Col 4 */}
+              <div className="flex items-start gap-3 lg:border-r lg:border-slate-800/80 pr-3">
+                <div className="w-10 h-10 rounded-full border border-[#d4af37]/35 flex items-center justify-center bg-gradient-to-br from-purple-500/10 to-[#ffd700]/10 text-purple-400 shadow-[0_0_10px_rgba(168,85,247,0.1)] shrink-0">
+                  <Handshake className="w-5 h-5 text-purple-400" />
+                </div>
+                <div>
+                  <h5 className="text-xs font-display font-black text-white uppercase tracking-wider">Đồng hành bền</h5>
+                  <p className="text-[10px] text-[#DDEBFF]/80 mt-1 leading-snug">Đối tác đào tạo, tư vấn kỹ thuật, setup showroom</p>
+                </div>
+              </div>
+
+              {/* Col 5 */}
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-full border border-[#d4af37]/35 flex items-center justify-center bg-gradient-to-br from-emerald-500/10 to-[#ffd700]/10 text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.1)] shrink-0">
+                  <TrendingUp className="w-5 h-5 text-emerald-400" />
+                </div>
+                <div>
+                  <h5 className="text-xs font-display font-black text-white uppercase tracking-wider">Lợi nhuận cao</h5>
+                  <p className="text-[10px] text-[#DDEBFF]/80 mt-1 leading-snug">Chiết khấu cực sâu, gặt hái phí thay lõi dồi dào</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </section>
 
       {/* SECTION 2: VÌ SAO NÊN HỢP TÁC RAINSOFT? - 4 CORE VALUE WITH HIGH-END STYLE */}
-      <section className="py-24 bg-[#020617] border-t border-[#d4af37]/15 z-10 relative" id="why">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-24 bg-[#010919] border-t border-[#d4af37]/15 z-10 relative overflow-hidden" id="why">
+        {/* Ambient starry backdrop grid and radiant outer space neon halos */}
+        <div className="absolute inset-0 bg-[#020713]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,212,255,0.08),transparent_70%)] pointer-events-none" />
+        
+        {/* Floating Water Splashes & Transparent Water Droplets at left and right margins matching the image */}
+        <div className="absolute left-0 top-[10%] w-48 sm:w-80 h-[500px] pointer-events-none opacity-40 sm:opacity-75 select-none z-10">
+          <svg viewBox="0 0 200 500" className="w-full h-full text-cyan-400" fill="currentColor">
+            {/* Liquid trails/sprays */}
+            <path d="M0,80 C60,110 90,60 110,130 C130,200 40,230 80,310 C100,350 20,400 0,450 Z" className="opacity-15 text-cyan-500" />
+            <path d="M0,120 C45,140 75,90 90,165 C105,235 25,265 55,340 C70,375 10,410 0,460 Z" className="opacity-25 text-cyan-400" />
+            {/* Flying physical water spheres */}
+            <circle cx="120" cy="100" r="10" className="opacity-40 text-cyan-300 animate-bounce" style={{ animationDuration: '4s' }} />
+            <circle cx="145" cy="180" r="7" className="opacity-45 text-cyan-200" />
+            <circle cx="130" cy="220" r="14" className="opacity-30 text-cyan-300 animate-pulse" />
+            <circle cx="160" cy="285" r="8" className="opacity-55 text-cyan-200" />
+            <circle cx="175" cy="340" r="11" className="opacity-40 text-cyan-300" />
+            <circle cx="105" cy="410" r="6" className="opacity-65 text-cyan-100" />
+            <circle cx="90" cy="60" r="12" className="opacity-35 text-cyan-400 animate-ping" style={{ animationDuration: '6s' }} />
+            {/* Beautiful light reflections on drops */}
+            <ellipse cx="116" cy="96" rx="3" ry="5" fill="white" className="opacity-75Rotate" />
+            <ellipse cx="142" cy="176" rx="2" ry="3" fill="white" className="opacity-80" />
+            <ellipse cx="126" cy="214" rx="4" ry="7" fill="white" className="opacity-60" />
+          </svg>
+        </div>
+
+        <div className="absolute right-0 top-[5%] w-48 sm:w-80 h-[500px] pointer-events-none opacity-40 sm:opacity-75 select-none z-10">
+          <svg viewBox="0 0 200 500" className="w-full h-full text-cyan-400" fill="currentColor">
+            <path d="M200,60 C140,90 110,40 90,110 C70,180 160,210 120,290 C100,330 180,380 200,430 Z" className="opacity-15 text-cyan-500" />
+            <path d="M200,100 C155,120 125,70 110,145 C95,215 175,245 145,320 C130,355 190,390 200,440 Z" className="opacity-25 text-cyan-400" />
+            <circle cx="80" cy="90" r="9" className="opacity-45 text-cyan-300 animate-bounce" style={{ animationDuration: '3.5s' }} />
+            <circle cx="55" cy="170" r="12" className="opacity-35 text-cyan-200 animate-pulse" />
+            <circle cx="70" cy="240" r="6" className="opacity-55 text-cyan-300" />
+            <circle cx="40" cy="280" r="14" className="opacity-40 text-cyan-200" />
+            <circle cx="55" cy="360" r="10" className="opacity-50 text-cyan-300" />
+            <circle cx="95" cy="430" r="8" className="opacity-60 text-cyan-100" />
+            {/* Reflections */}
+            <ellipse cx="76" cy="86" rx="2.5" ry="4.5" fill="white" className="opacity-80" />
+            <ellipse cx="51" cy="164" rx="3.5" ry="6" fill="white" className="opacity-70" />
+          </svg>
+        </div>
+
+        {/* Ambient background blur colors */}
+        <div className="absolute top-[35%] left-1/4 w-80 h-80 bg-cyan-500/4 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-[45%] right-1/4 w-96 h-96 bg-purple-500/4 rounded-full blur-[160px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
           
-          {/* Section heading header */}
-          <div className="text-center space-y-4 mb-20 max-w-3xl mx-auto">
-            <span className="text-xs font-mono font-bold text-[#00D4FF] uppercase tracking-widest block">Nền tảng RainSoft Dealer</span>
-            <h2 className="text-3xl sm:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none">
-              Vì sao nên hợp tác?<br />
-              <span className="text-gold-metallic text-2xl sm:text-4xl mt-3 inline-block font-sans lowercase font-normal italic tracking-wide">4 Nền Tảng Phát Triển Thượng Hạng</span>
+          {/* Section heading header exactly matching image 100% */}
+          <div className="text-center space-y-3 mb-16 max-w-4xl mx-auto">
+            
+            {/* Top decorative badge with gold marks */}
+            <div className="flex items-center justify-center gap-3.5 select-none">
+              <div className="flex items-center gap-1 opacity-90">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#ffd700] shadow-[0_0_8px_#ffd700] shrink-0" />
+                <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-r from-transparent to-[#ffd700]" />
+              </div>
+              <span className="text-[10px] sm:text-xs font-mono font-bold text-[#00E5FF] tracking-[0.25em] uppercase">
+                NỀN TẢNG RAINSOFT DEALER
+              </span>
+              <div className="flex items-center gap-1 opacity-90">
+                <div className="w-12 sm:w-20 h-[1px] bg-gradient-to-l from-transparent to-[#ffd700]" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#ffd700] shadow-[0_0_8px_#ffd700] shrink-0" />
+              </div>
+            </div>
+
+            {/* Main header: VÌ SAO NÊN HỢP TÁC? (VÌ SAO in white, NÊN HỢP TÁC? in luxury gold gradient) */}
+            <h2 className="text-4xl sm:text-7xl font-sans font-black text-white tracking-tight uppercase leading-tight mt-3">
+              VÌ SAO <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffe066] via-[#ffd700] to-[#b8860b] drop-shadow-[0_2px_15px_rgba(255,215,0,0.5)] font-display font-black">NÊN HỢP TÁC?</span>
             </h2>
-            <div className="w-24 h-0.5 bg-gradient-to-r from-[#ffd700] to-transparent mx-auto mt-4" />
-            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal">
-              Mô hình RainSoft Dealer phát huy tối đa 4 trụ cột tăng trưởng vững bền: Sản phẩm tột đỉnh, Chương trình chuyên sâu, Lợi nhuận vượt bậc và Con người đồng hành.
+
+            {/* Sub-heading standard: 4 nền tảng phát triển thương hiệu (italic cursive font style) */}
+            <p className="text-xl sm:text-3.5xl text-white font-sans font-medium tracking-wide mt-2">
+              4 nền tảng <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffe57f] via-[#ffd700] to-[#b8860b] font-serif font-semibold italic tracking-wide lowercase">phát triển thương hiệu</span>
+            </p>
+
+            {/* Sub-description matching exactly */}
+            <p className="text-xs sm:text-sm text-[#DDEBFF]/80 leading-relaxed max-w-4xl mx-auto pt-4 font-sans font-normal">
+              Mô hình RainSoft Dealer phát huy tối đa 4 trụ cột tăng trưởng vững bền: <br className="hidden sm:block" />
+              Sản phẩm tốt đỉnh, Chương trình chuyên sâu, Lợi nhuận vượt bậc và Con người đồng hành.
             </p>
           </div>
 
           {/* Cards Grid using genuine luxury glassmorphism and thin gold border alignments */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             
-            {/* Value 1: Product */}
-            <div className="p-8 rounded-3xl border-gold-glow text-left hover:border-[#ffd700] hover:translate-y-[-8px] transition-all duration-300 relative group glow-blue flex flex-col justify-between h-full">
+            {/* Value 1: Product (Gold Theme) */}
+            <div className="p-6 sm:p-7 pt-9 pb-5 rounded-[2rem] bg-gradient-to-b from-[#03142d]/85 via-[#020d1c]/95 to-[#01091a]/100 border border-[#ffd700]/30 hover:border-[#ffd700] hover:shadow-[0_0_35px_rgba(255,215,0,0.22)] transition-all duration-350 relative group flex flex-col justify-between h-full overflow-hidden">
               <div>
-                <div className="p-3 w-14 h-14 rounded-2xl bg-[#ffd700]/10 border border-[#ffd700]/25 text-[#ffd700] flex items-center justify-center shrink-0 mb-6 group-hover:bg-[#ffd700]/20 transition-all shadow-[0_0_15px_rgba(255,215,0,0.1)]">
-                  <Award className="w-8 h-8" />
+                
+                {/* Gold Circle Badge Header containing star/award icon */}
+                <div className="flex justify-center mb-6">
+                  <div className="relative w-14 h-14 rounded-full bg-gradient-to-b from-amber-300 via-yellow-400 to-amber-600 p-[1.5px] shadow-[0_0_20px_rgba(255,215,0,0.35)] flex items-center justify-center shrink-0 group-hover:scale-110 duration-300">
+                    <div className="w-full h-full bg-[#020d1c] rounded-full flex items-center justify-center text-[#ffd700]">
+                      <Award className="w-7 h-7 text-[#ffd700] animate-pulse" />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-display font-black text-white tracking-wide uppercase leading-snug">
-                  1. Product <span className="text-[#ffd700] font-sans font-light capitalize text-base block mt-1">Sản phẩm tột đỉnh</span>
-                </h3>
-                <p className="text-xs sm:text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal font-sans">
+
+                {/* Number & Name Title Block */}
+                <div className="text-center">
+                  <h3 className="text-base font-sans font-bold text-slate-400 tracking-wide uppercase">
+                    <span className="text-[#ffd700] font-mono font-black text-xl mr-2">01</span>PRODUCT
+                  </h3>
+                  <span className="text-xs font-mono font-black text-[#ffd700] tracking-widest uppercase block mt-1 drop-shadow-[0_0_8px_rgba(255,215,0,0.4)]">
+                    SẢN PHẨM TỐT ĐỈNH
+                  </span>
+                </div>
+
+                {/* Description */}
+                <p className="text-[11px] sm:text-[12px] text-[#DDEBFF]/85 leading-relaxed mt-4 font-normal font-sans text-justify">
                   Thương hiệu Mỹ có bề dày từ 1953, định vị phân hiệu siêu xa xỉ độc quyền. Đạt chứng chỉ uy tín thế giới Gold Seal (WQA, NSF) cam kết bảo vệ trọn vẹn gia đình thượng lưu.
                 </p>
               </div>
+
+              {/* Dynamic CSS Canister Illustration at Bottom (Render 100% matching image) */}
+              <div className="relative w-full h-44 mt-6 rounded-2xl bg-[#020c19] border border-[#ffd700]/15 overflow-hidden flex items-center justify-center shadow-inner">
+                {/* Base gradients */}
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(2,12,25,0)_40%,#03162f_100%)] z-10" />
+                <div className="absolute bottom-0 w-full h-[60px] bg-[radial-gradient(ellipse_at_center,rgba(0,110,255,0.18),transparent_60%)] pointer-events-none" />
+                
+                {/* Holographic Glowing Oval Platform */}
+                <div className="absolute bottom-2 w-48 h-8 rounded-full border border-[#ffd700]/35 bg-gradient-to-b from-[#031530] to-[#010817] shadow-[0_4px_15px_rgba(255,215,0,0.25)] flex items-center justify-center">
+                  <div className="w-[90%] h-[90%] rounded-full border border-dashed border-[#00D4FF]/25 animate-spin-slow" />
+                </div>
+
+                {/* Actual Custom canister columns of Gold Seal Product */}
+                <div className="relative z-25 flex items-end justify-center gap-2.5 pb-4 h-full scale-[0.9]">
+                  
+                  {/* Canister 1 Left (Luxurious Black Active Carbon Bottle) */}
+                  <div className="relative w-4.5 h-22 bg-gradient-to-b from-[#222] via-[#080808] to-[#121212] rounded-full border border-slate-700/50 shadow-md flex flex-col justify-between items-center py-1">
+                    <div className="w-3.5 h-2 bg-slate-950 rounded-t-sm border-b border-[#ffd700]/30" />
+                    {/* Brand print */}
+                    <div className="w-3 h-6 bg-white/5 rounded flex flex-col items-center justify-center gap-0.5">
+                      <span className="text-[3px] font-sans font-bold text-amber-400 scale-[0.6] leading-none">RainSoft</span>
+                      <div className="w-2.5 h-[1px] bg-slate-600 scale-75" />
+                    </div>
+                    <div className="w-full h-[1px] bg-slate-800" />
+                  </div>
+
+                  {/* Canister 2 Center (Large High-End Pearl White Softener Canister with Chrome Cap) */}
+                  <div className="relative w-7 h-28 bg-gradient-to-b from-slate-100 via-white to-slate-200 rounded-full border border-slate-300 shadow-[0_0_12px_rgba(255,215,0,0.15)] flex flex-col justify-between items-center py-2.5">
+                    <div className="absolute top-0 bottom-0 left-[2.5px] w-[1px] bg-white/40" />
+                    {/* Metal cap on center bottle */}
+                    <div className="w-5.5 h-4.5 bg-slate-950 rounded-t-md flex flex-col items-center justify-center border-b border-[#ffd700]/40">
+                      <div className="w-2.5 h-[1.5px] bg-[#00E5FF] animate-pulse rounded-full" />
+                    </div>
+                    {/* Gold separator */}
+                    <div className="w-full h-1 bg-[#ffd700]" />
+                    {/* Label badge */}
+                    <div className="w-5.5 h-8 bg-[#040e24] rounded border border-[#ffd700]/25 flex flex-col items-center justify-center p-0.5 relative">
+                      <span className="text-[3px] font-bold text-white scale-[0.8] leading-none">RainSoft</span>
+                      <div className="w-3.5 h-[0.5px] bg-[#ffd700] scale-90 mt-0.5" />
+                      <div className="w-1.5 h-[0.5px] bg-slate-500 scale-90 mt-0.5" />
+                    </div>
+                    <div className="w-5 h-1.5 bg-slate-950 rounded-b-full" />
+                  </div>
+
+                  {/* Canister 3 Right (Medium Metallic Titanium Silver Filter) */}
+                  <div className="relative w-5 h-24 bg-gradient-to-b from-slate-200 via-slate-400 to-slate-700 rounded-full border border-slate-300 shadow-md flex flex-col justify-between items-center py-2">
+                    <div className="w-4 h-2 bg-slate-950 rounded-t-sm" />
+                    {/* Blue water status band indicator */}
+                    <div className="w-2.5 h-7 bg-cyan-950/40 rounded flex flex-col items-center justify-center p-0.5 border border-cyan-500/10">
+                      <div className="w-1 h-3 bg-cyan-400 animate-pulse rounded-full shadow-[0_0_4px_#00E5FF]" />
+                    </div>
+                    <div className="w-full h-[1px] bg-slate-600" />
+                  </div>
+                </div>
+
+                {/* Golden Protection Star Shield check at bottom left */}
+                <div className="absolute bottom-5 left-4 z-30 transform -rotate-12 hover:rotate-6 transition-transform duration-300">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-b from-[#ffd700] via-[#b8860b] to-[#ffd700] p-[1.5px] shadow-[0_5px_12px_rgba(255,215,0,0.35)]">
+                    <div className="w-full h-full bg-slate-950 rounded-[9px] flex items-center justify-center">
+                      <ShieldCheck className="w-5 h-5 text-[#ffd700]" />
+                    </div>
+                  </div>
+                </div>
+
+                {/* Glints */}
+                <div className="absolute top-1/3 left-1/4 w-1 h-1 bg-[#ffd700] rounded-full animate-ping" />
+                <div className="absolute top-1/4 right-1/4 w-1 h-1 bg-cyan-400 rounded-full animate-ping" style={{ animationDelay: '1.5s' }} />
+              </div>
+
               <div className="w-full h-1 bg-gradient-to-r from-[#ffd700] via-[#b8860b] to-[#ffd700] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left absolute bottom-0 left-0 rounded-b-3xl" />
             </div>
 
-            {/* Value 2: Program */}
-            <div className="p-8 rounded-3xl border-gold-glow text-left hover:border-[#ffd700] hover:translate-y-[-8px] transition-all duration-300 relative group glow-blue flex flex-col justify-between h-full">
+            {/* Value 2: Program (Blue/Cyan Theme) */}
+            <div className="p-6 sm:p-7 pt-9 pb-5 rounded-[2rem] bg-gradient-to-b from-[#03142d]/85 via-[#020d1c]/95 to-[#01091a]/100 border border-[#00D4FF]/25 hover:border-[#00D4FF] hover:shadow-[0_0_35px_rgba(0,212,255,0.22)] transition-all duration-350 relative group flex flex-col justify-between h-full overflow-hidden">
               <div>
-                <div className="p-3 w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-500/25 text-[#00D4FF] flex items-center justify-center shrink-0 mb-6 group-hover:bg-indigo-500/20 transition-all shadow-[0_0_15px_rgba(0,212,255,0.1)]">
-                  <Layers className="w-8 h-8" />
+                
+                {/* Cyan Circle Badge Header */}
+                <div className="flex justify-center mb-6">
+                  <div className="relative w-14 h-14 rounded-full bg-gradient-to-b from-cyan-300 via-cyan-400 to-blue-600 p-[1.5px] shadow-[0_0_20px_rgba(0,212,255,0.35)] flex items-center justify-center shrink-0 group-hover:scale-110 duration-300">
+                    <div className="w-full h-full bg-[#020d1c] rounded-full flex items-center justify-center text-[#00D4FF]">
+                      <Layers className="w-7 h-7 text-[#00D4FF] animate-pulse" />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-display font-black text-white tracking-wide uppercase leading-snug">
-                  2. Program <span className="text-[#00D4FF] font-sans font-light capitalize text-base block mt-1">Hỗ trợ sâu rộng</span>
-                </h3>
-                <p className="text-xs sm:text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal font-sans">
-                  Hệ thống đào tạo kỹ năng tư vấn khép kín, bộ tài nguyên truyền thông độc quyền, phối ghép demo vali trực quan sinh động và kịch bản marketing vùng tự động cao.
+
+                {/* Number & Title Block */}
+                <div className="text-center">
+                  <h3 className="text-base font-sans font-bold text-slate-400 tracking-wide uppercase">
+                    <span className="text-[#00D4FF] font-mono font-black text-xl mr-2">02</span>PROGRAM
+                  </h3>
+                  <span className="text-xs font-mono font-black text-[#00D4FF] tracking-widest uppercase block mt-1 drop-shadow-[0_0_8px_rgba(0,212,255,0.4)]">
+                    HỖ TRỢ SÂU RỘNG
+                  </span>
+                </div>
+
+                {/* Description Wording exactly matching the image */}
+                <p className="text-[11px] sm:text-[12px] text-[#DDEBFF]/85 leading-relaxed mt-4 font-normal font-sans text-justify">
+                  Hệ thống đào tạo kỹ năng tư vấn khép kín, bộ tài nguyên truyền thông độc quyền, phối ghép demo, vật tư cực quan sinh động và kịch bản marketing vùng tự động cao.
                 </p>
               </div>
-              <div className="w-full h-1 bg-gradient-to-r from-indigo-550 to-indigo-650 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left absolute bottom-0 left-0 rounded-b-3xl" />
+
+              {/* Dynamic Academic Training Laptop Design */}
+              <div className="relative w-full h-44 mt-6 rounded-2xl bg-[#020c19] border border-[#00D4FF]/15 overflow-hidden flex items-center justify-center shadow-inner">
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(2,12,25,0)_40%,#03162f_100%)] z-10" />
+                <div className="absolute bottom-0 w-full h-[60px] bg-[radial-gradient(ellipse_at_center,rgba(0,212,255,0.18),transparent_60%)] pointer-events-none" />
+
+                {/* Laptop scale representation */}
+                <div className="relative z-20 flex flex-col items-center justify-center w-[150px] h-28 transform hover:scale-105 duration-300 scale-[0.92]">
+                  {/* Laptop Screen */}
+                  <div className="w-[110px] h-[68px] bg-[#020612] rounded-t-xl border border-cyan-500/30 p-1 shadow-[0_0_20px_rgba(0,212,255,0.15)] flex flex-col justify-between relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-[60px] h-[60px] bg-gradient-to-bl from-cyan-500/5 to-transparent pointer-events-none" />
+                    <div className="flex items-center justify-between border-b border-cyan-500/15 pb-0.5">
+                      <div className="flex gap-0.5">
+                        <span className="w-1 h-1 rounded-full bg-red-500" />
+                        <span className="w-1 h-1 rounded-full bg-yellow-400" />
+                        <span className="w-1 h-1 rounded-full bg-green-500" />
+                      </div>
+                      <span className="text-[4.5px] font-mono text-cyan-400">RAINSOFT ONL</span>
+                    </div>
+                    
+                    <div className="flex-1 flex flex-col justify-center items-center py-1 gap-1">
+                      <div className="w-[90%] h-3.5 bg-cyan-950/40 rounded border border-cyan-500/10 flex items-center justify-center">
+                        <span className="text-[4.5px] font-mono text-cyan-300 font-bold">TRAINING SYSTEM</span>
+                      </div>
+                      <div className="w-[90%] flex gap-1">
+                        <div className="flex-1 h-2.5 bg-[#ffd700]/5 rounded border border-[#ffd700]/15 flex items-center justify-center">
+                          <span className="text-[4px] font-mono text-amber-300 scale-90">CURRICULUM</span>
+                        </div>
+                        <div className="flex-1 h-2.5 bg-cyan-950/50 rounded border border-cyan-500/10 flex items-center justify-center">
+                          <span className="text-[4px] font-mono text-cyan-400 scale-90">VALI DEMO</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="h-[1.5px] bg-cyan-500/15" />
+                  </div>
+
+                  {/* Base */}
+                  <div className="relative w-[136px] h-[5px] bg-gradient-to-b from-slate-400 to-slate-700 rounded-b-md shadow-2xl border-t border-slate-300">
+                    <div className="absolute top-[0.5px] left-1/2 -translate-x-1/2 w-7 h-[1.5px] bg-slate-900 rounded" />
+                  </div>
+                </div>
+
+                {/* Cute Graduation Cap */}
+                <div className="absolute top-1/4 left-5 z-30 transform -rotate-12 select-none pointer-events-none scale-90">
+                  <div className="relative">
+                    <div className="w-11 h-4.5 bg-slate-950 border border-slate-700 shadow-2xl relative flex items-center justify-center [transform:rotateX(55deg)_rotateZ(45deg)]">
+                      <div className="absolute w-1 h-1 bg-[#ffd700] rounded-full shadow" />
+                    </div>
+                    <div className="w-5 h-2 bg-slate-950 border-x border-b border-slate-800 rounded-full mx-auto -mt-1 shadow-inner" />
+                    <div className="absolute left-[30px] top-2.5 w-[0.8px] h-5 bg-[#ffd700]/80 shadow" />
+                  </div>
+                </div>
+
+                {/* Network nodes coordinates background */}
+                <svg className="absolute inset-0 w-full h-full opacity-15 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="20%" cy="35%" r="1.5" fill="#00D4FF" />
+                  <circle cx="80%" cy="25%" r="2" fill="#00D4FF" />
+                  <circle cx="85%" cy="75%" r="1.5" fill="#00D4FF" />
+                  <line x1="20%" y1="35%" x2="45%" y2="50%" stroke="#00D4FF" strokeWidth="0.5" />
+                  <line x1="80%" y1="25%" x2="60%" y2="45%" stroke="#00D4FF" strokeWidth="0.5" />
+                </svg>
+              </div>
+
+              <div className="w-full h-1 bg-gradient-to-r from-cyan-400 to-indigo-650 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left absolute bottom-0 left-0 rounded-b-3xl" />
             </div>
 
-            {/* Value 3: Profit */}
-            <div className="p-8 rounded-3xl border-gold-glow text-left hover:border-[#ffd700] hover:translate-y-[-8px] transition-all duration-300 relative group glow-blue flex flex-col justify-between h-full">
+            {/* Value 3: Profit (Purple Theme) */}
+            <div className="p-6 sm:p-7 pt-9 pb-5 rounded-[2rem] bg-gradient-to-b from-[#03142d]/85 via-[#020d1c]/95 to-[#01091a]/100 border border-purple-500/25 hover:border-[#a855f7] hover:shadow-[0_0_35px_rgba(168,85,247,0.22)] transition-all duration-350 relative group flex flex-col justify-between h-full overflow-hidden">
               <div>
-                <div className="p-3 w-14 h-14 rounded-2xl bg-purple-500/10 border border-purple-500/25 text-purple-400 flex items-center justify-center shrink-0 mb-6 group-hover:bg-purple-500/20 transition-all">
-                  <BadgeDollarSign className="w-8 h-8" />
+                
+                {/* Purple Circle Badge Header */}
+                <div className="flex justify-center mb-6">
+                  <div className="relative w-14 h-14 rounded-full bg-gradient-to-b from-purple-300 via-fuchsia-400 to-fuchsia-600 p-[1.5px] shadow-[0_0_20px_rgba(168,85,247,0.35)] flex items-center justify-center shrink-0 group-hover:scale-110 duration-300">
+                    <div className="w-full h-full bg-[#020d1c] rounded-full flex items-center justify-center text-purple-450">
+                      <BadgeDollarSign className="w-7 h-7 text-purple-400 animate-pulse" />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-display font-black text-white tracking-wide uppercase leading-snug">
-                  3. Profit <span className="text-[#ffd700] font-sans font-light capitalize text-base block mt-1">Lợi nhuận đột phá</span>
-                </h3>
-                <p className="text-xs sm:text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal font-sans">
-                  Sở hữu tỷ lệ chiết khấu ưu tiến cùng dòng sản phẩm giá trị đơn hàng vượt lớn, tối ưu hóa điểm số doanh thu trên từng khách gặt hái dòng tiền an tâm dồi dào.
+
+                {/* Number & Title Block */}
+                <div className="text-center">
+                  <h3 className="text-base font-sans font-bold text-slate-400 tracking-wide uppercase">
+                    <span className="text-purple-400 font-mono font-black text-xl mr-2">03</span>PROFIT
+                  </h3>
+                  <span className="text-xs font-mono font-black text-purple-400 tracking-widest uppercase block mt-1 drop-shadow-[0_0_8px_rgba(168,85,247,0.4)]">
+                    LỢI NHUẬN ĐỘT PHÁ
+                  </span>
+                </div>
+
+                {/* Description text matches 100% exactly */}
+                <p className="text-[11px] sm:text-[12px] text-[#DDEBFF]/85 leading-relaxed mt-4 font-normal font-sans text-justify">
+                  Sở hữu tỷ lệ chiết khấu ưu tiên cùng dòng sản phẩm giá trị đơn hàng vượt trội, tối ưu hóa điểm số doanh thu trên từng khách gặt hái dòng tiền an tâm dài dào.
                 </p>
               </div>
-              <div className="w-full h-1 bg-gradient-to-r from-purple-500 to-[#ffd700] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left absolute bottom-0 left-0 rounded-b-3xl" />
+
+              {/* Dynamic Rising Profit Growth vector and coins representation */}
+              <div className="relative w-full h-44 mt-6 rounded-2xl bg-[#020c19] border border-purple-500/15 overflow-hidden flex items-center justify-center shadow-inner">
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(2,12,25,0)_40%,#03162f_100%)] z-10" />
+                <div className="absolute bottom-0 w-full h-[60px] bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.18),transparent_60%)] pointer-events-none" />
+
+                {/* The growth bar graphs */}
+                <div className="absolute bottom-4 left-6 right-20 z-20 h-22 flex items-end justify-between gap-1.5">
+                  {[
+                    { h: "22%", d: "0s" },
+                    { h: "38%", d: "0.15s" },
+                    { h: "54%", d: "0.3s" },
+                    { h: "72%", d: "0.45s" },
+                    { h: "94%", d: "0.6s" }
+                  ].map((bar, idx) => (
+                    <div key={idx} className="flex-1 flex flex-col items-center group-hover:scale-y-105 duration-300 origin-bottom">
+                      <div className="w-[4px] h-[4px] rounded-full bg-purple-400 shadow-[0_0_6px_#a855f7] mb-0.5 animate-pulse" style={{ animationDelay: bar.d }} />
+                      <div 
+                        style={{ height: bar.h }}
+                        className="w-2.5 rounded-t bg-gradient-to-t from-purple-950 via-purple-600 to-fuchsia-400 shadow-[0_0_8px_rgba(168,85,247,0.35)]"
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {/* shooting glowing arrow svg overlay */}
+                <div className="absolute bottom-4 left-4 right-18 h-22 z-25 pointer-events-none">
+                  <svg className="w-full h-full overflow-visible" xmlns="http://www.w3.org/2000/svg">
+                    <path 
+                      d="M 10 75 Q 35 55 60 38 T 100 12" 
+                      fill="none" 
+                      stroke="url(#arrow-purple-gradient)" 
+                      strokeWidth="2.5" 
+                      className="animate-pulse-subtle"
+                    />
+                    <polygon 
+                      points="96,16 102,9 101,21" 
+                      fill="#f472b6" 
+                      className="animate-bounce"
+                      style={{ animationDuration: '2.5s' }}
+                    />
+                    <defs>
+                      <linearGradient id="arrow-purple-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#7e22ce" stopOpacity="0.4" />
+                        <stop offset="100%" stopColor="#f472b6" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+                </div>
+
+                {/* Stacks. Of. Gold. Coins! */}
+                <div className="absolute bottom-3 right-4 z-30 flex items-end gap-0.5 group-hover:-translate-y-1 duration-300">
+                  {/* Flat stacked cylinder coin stack left */}
+                  <div className="flex flex-col-reverse -space-y-3.5 scale-75 select-none animate-pulse-subtle">
+                    {[...Array(3)].map((_, i) => (
+                      <div key={i} className="w-6 h-3.5 bg-gradient-to-r from-amber-600 via-amber-300 to-yellow-500 rounded-full border border-amber-400 shadow-sm relative">
+                        <div className="absolute inset-[1px] rounded-full bg-gradient-to-r from-amber-500 to-yellow-600 border border-amber-300/40" />
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Star gold coin stack right (standing taller) */}
+                  <div className="flex flex-col-reverse -space-y-3.5 scale-95 select-none relative z-10">
+                    {[...Array(5)].map((_, i) => (
+                      <div key={i} className="w-7 h-4 bg-gradient-to-r from-amber-600 via-amber-300 to-yellow-500 rounded-full border border-amber-400/90 shadow-md relative flex items-center justify-center">
+                        <div className="absolute inset-[1px] rounded-full bg-gradient-to-r from-amber-400 to-yellow-600 border border-amber-200/50 flex items-center justify-center">
+                          {i === 4 && <span className="text-[7.5px] font-black text-yellow-950 font-mono scale-90 leading-none">$</span>}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Big Gold Coin lean in front of stacked gold coins */}
+                  <div className="absolute bottom-0 right-[4px] w-6 h-6 rounded-full bg-gradient-to-b from-yellow-300 via-amber-500 to-yellow-600 border border-[#ffd700] flex items-center justify-center shadow-[0_2px_8px_rgba(251,191,36,0.5)] z-20 hover:scale-110 duration-200">
+                    <div className="w-[85%] h-[85%] rounded-full bg-gradient-to-r from-yellow-400 to-amber-500 border border-yellow-250 flex items-center justify-center">
+                      <span className="text-[9px] font-black text-amber-950">$</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Sparkling dot */}
+                <div className="absolute top-1/3 right-10 w-1.5 h-1.5 rounded-full bg-[#ffd700] blur-[1px] animate-ping" />
+              </div>
+
+              <div className="w-full h-1 bg-gradient-to-r from-purple-500 to-fuchsia-500 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left absolute bottom-0 left-0 rounded-b-3xl" />
             </div>
 
-            {/* Value 4: People */}
-            <div className="p-8 rounded-3xl border-gold-glow text-left hover:border-[#ffd700] hover:translate-y-[-8px] transition-all duration-300 relative group glow-blue flex flex-col justify-between h-full">
+            {/* Value 4: People (Teal/Green Theme) */}
+            <div className="p-6 sm:p-7 pt-9 pb-5 rounded-[2rem] bg-gradient-to-b from-[#03142d]/85 via-[#020d1c]/95 to-[#01091a]/100 border border-[#10b981]/25 hover:border-[#10b981] hover:shadow-[0_0_35px_rgba(16,185,129,0.22)] transition-all duration-350 relative group flex flex-col justify-between h-full overflow-hidden">
               <div>
-                <div className="p-3 w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-400 flex items-center justify-center shrink-0 mb-6 group-hover:bg-emerald-500/20 transition-all">
-                  <Users className="w-8 h-8" />
+                
+                {/* Green Circle Badge Header */}
+                <div className="flex justify-center mb-6">
+                  <div className="relative w-14 h-14 rounded-full bg-gradient-to-b from-emerald-300 via-teal-400 to-teal-600 p-[1.5px] shadow-[0_0_20px_rgba(16,185,129,0.35)] flex items-center justify-center shrink-0 group-hover:scale-110 duration-300">
+                    <div className="w-full h-full bg-[#020d1c] rounded-full flex items-center justify-center text-[#10b981]">
+                      <Users className="w-7 h-7 text-[#10b981] animate-pulse" />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-xl font-display font-black text-white tracking-wide uppercase leading-snug">
-                  4. People <span className="text-emerald-400 font-sans font-light capitalize text-base block mt-1">Đồng hành thực chiến</span>
-                </h3>
-                <p className="text-xs sm:text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal font-sans">
+
+                {/* Number & Title Block */}
+                <div className="text-center">
+                  <h3 className="text-base font-sans font-bold text-slate-400 tracking-wide uppercase">
+                    <span className="text-emerald-400 font-mono font-black text-xl mr-2">04</span>PEOPLE
+                  </h3>
+                  <span className="text-xs font-mono font-black text-[#10b981] tracking-widest uppercase block mt-1 drop-shadow-[0_0_8px_rgba(16,185,129,0.4)]">
+                    ĐỒNG HÀNH THỰC CHIẾN
+                  </span>
+                </div>
+
+                {/* Description wording exactly matches 100% */}
+                <p className="text-[11px] sm:text-[12px] text-[#DDEBFF]/85 leading-relaxed mt-4 font-normal font-sans text-justify">
                   Chuyên viên SHAHA Việt Nam sẵn sàng hỗ trợ trực tiếp từ đo lường mẫu nước thực nghiệm bằng vali Test Kit Hoa Kỳ, tư vấn chốt deal và tối ưu kỹ nghệ lắp đặt.
                 </p>
               </div>
-              <div className="w-full h-1 bg-gradient-to-r from-emerald-500 to-[#ffd700] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left absolute bottom-0 left-0 rounded-b-3xl" />
+
+              {/* Dynamic Cyber Earth Globe and Silhouetted Lineup representation */}
+              <div className="relative w-full h-44 mt-6 rounded-2xl bg-[#020c19] border border-[#10b981]/15 overflow-hidden flex items-center justify-center shadow-inner">
+                <div className="absolute inset-0 bg-[linear-gradient(rgba(2,12,25,0)_40%,#03162f_100%)] z-10" />
+                <div className="absolute bottom-0 w-full h-[60px] bg-[radial-gradient(ellipse_at_center,rgba(16,185,129,0.18),transparent_60%)] pointer-events-none" />
+
+                {/* Holographic earth sphere background rotating */}
+                <div className="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-24 z-20 opacity-20 pointer-events-none">
+                  <div className="w-full h-full rounded-full border border-dashed border-emerald-400 animate-spin-slow flex items-center justify-center relative">
+                    <div className="absolute w-[80%] h-[80%] rounded-full border border-dashed border-cyan-400" />
+                    <div className="absolute top-1/2 left-0 right-0 h-[0.5px] bg-emerald-400" />
+                    <div className="absolute left-1/2 top-0 bottom-0 w-[0.5px] bg-emerald-400" />
+                  </div>
+                </div>
+
+                {/* Base radar lines on grid */}
+                <div className="absolute bottom-3 left-1/2 -translate-x-1/2 w-40 h-10 z-15 flex items-center justify-center pointer-events-none">
+                  <div className="w-36 h-6 rounded-full border-2 border-emerald-400/20 bg-emerald-950/10 [transform:rotateX(65deg)] flex items-center justify-center relative shadow-[0_0_15px_rgba(16,185,129,0.15)]">
+                    <div className="w-[85%] h-[85%] rounded-full border border-dashed border-emerald-400/40 animate-spin-slow" />
+                    <div className="w-[50%] h-[50%] rounded-full border border-emerald-400/60 animate-ping opacity-50" />
+                  </div>
+                </div>
+
+                {/* 3 Executive shadow models standing */}
+                <div className="absolute bottom-1 left-1/2 -translate-x-1/2 z-25 flex items-end justify-center w-full h-20 gap-3 px-8 pointer-events-none scale-[0.88]">
+                  
+                  {/* Left executive */}
+                  <div className="flex flex-col items-center scale-90 opacity-60">
+                    <div className="relative">
+                      <div className="w-3 h-3 rounded-full bg-slate-900 border border-emerald-500/50" />
+                      <svg className="w-8 h-8 -mt-1 text-slate-900 fill-current" viewBox="0 0 100 100">
+                        <path d="M 15 90 C 20 40, 80 40, 85 90 Z" stroke="#10b981" strokeWidth="3" />
+                      </svg>
+                    </div>
+                  </div>
+
+                  {/* Center Leader Proudly Styled */}
+                  <div className="flex flex-col items-center scale-105 z-10">
+                    <div className="relative flex flex-col items-center">
+                      <div className="w-4 h-4 rounded-full bg-slate-900 border-2 border-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.4)]" />
+                      <div className="relative -mt-1 w-10 h-12 bg-slate-900 border-t-2 border-x-2 border-emerald-400 rounded-t-full shadow-md overflow-hidden flex flex-col items-center pt-1 px-2.5">
+                        <div className="w-2.5 h-2.5 border-b border-x border-[#10b981]/50 rounded-b-xl" />
+                        <div className="w-1.5 h-5 bg-gradient-to-b from-emerald-400 to-teal-600 rounded" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right executive */}
+                  <div className="flex flex-col items-center scale-90 opacity-60">
+                    <div className="relative">
+                      <div className="w-3 h-3 rounded-full bg-slate-900 border border-emerald-500/50" />
+                      <svg className="w-8 h-8 -mt-1 text-slate-900 fill-current" viewBox="0 0 100 100">
+                        <path d="M 15 90 C 20 40, 80 40, 85 90 Z" stroke="#10b981" strokeWidth="3" />
+                      </svg>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div className="absolute top-1/4 left-10 w-0.5 h-8 bg-emerald-500/20" />
+              </div>
+
+              <div className="w-full h-1 bg-gradient-to-r from-emerald-400 to-[#10b981] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left absolute bottom-0 left-0 rounded-b-3xl" />
+            </div>
+
+          </div>
+
+          {/* Golden Quote Band Quote Block at bottom representing premium commitment */}
+          <div className="mt-16 flex justify-center">
+            <div className="relative inline-flex items-center px-10 sm:px-14 py-4 rounded-full bg-slate-950/75 border border-[#ffd700]/30 shadow-[0_0_20px_rgba(255,215,0,0.1)] max-w-3xl text-center group hover:border-[#ffd700]/60 transition-all duration-300">
+              <div className="absolute top-[-5px] left-[15%] w-2 h-2 bg-[#ffd700] rounded-full blur-[1px] animate-ping" />
+              <span className="text-xs sm:text-xs md:text-sm text-[#DDEBFF] leading-relaxed font-sans font-bold flex items-center justify-center gap-1.5 flex-wrap">
+                <span className="text-[#ffd700] text-lg font-serif">❝</span>
+                Đối tác không đi một mình – <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffd700] via-[#fff3b0] to-[#b8860b] font-sans font-black tracking-wider uppercase">SHAHA Việt Nam</span> đồng hành từ A-Z
+                <span className="text-[#ffd700] text-lg font-serif">❞</span>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* NEW SECTION: PREMIUM PRODUCT LINEUP & INTERACTIVE CATALOG (Matched strictly with Image 1 & Image 2 filters) */}
+      <section className="py-24 bg-[#010919] border-t border-[#ffd700]/25 relative z-10" id="products">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,212,255,0.08),transparent_40%)] pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Section Heading */}
+          <div className="text-center space-y-4 mb-16 max-w-3xl mx-auto">
+            <span className="text-xs font-mono font-bold text-[#ffd700] uppercase tracking-widest block">Công nghệ tột đỉnh</span>
+            <h2 className="text-3xl sm:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none">
+              Thiết Bị Lọc Tổng RainSoft
+            </h2>
+            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed font-normal">
+              Trực quan hóa hệ danh mục sản phẩm từ dòng thiết lập cao cấp độc bản (Ảnh 1) đến toàn cảnh quần thể gia đình thiết bị đa dạng công suất (Ảnh 2) được SHAHA phân phối ủy quyền.
+            </p>
+          </div>
+
+          {/* Dynamic Switch Filter and Control Tabs for Image 1 vs Image 2 */}
+          <div className="flex justify-center mb-12">
+            <div className="inline-flex p-1.5 rounded-2xl bg-[#03142d]/90 border border-[#ffd700]/30 shadow-[0_0_25px_rgba(255,215,0,0.05)]">
+              <button
+                onClick={() => setSelectedProductTab('image1')}
+                className={`px-6 py-3.5 rounded-xl font-sans font-black text-xs uppercase tracking-widest transition-all duration-300 flex items-center gap-2 cursor-pointer ${
+                  selectedProductTab === 'image1'
+                    ? 'bg-gradient-to-r from-[#ffd700] to-[#b8860b] text-slate-950 shadow-[0_5px_15px_rgba(255,215,0,0.25)]'
+                    : 'text-[#DDEBFF]/70 hover:text-white hover:bg-slate-950/40'
+                }`}
+              >
+                <Sparkles className="w-4 h-4 shrink-0" />
+                <span>Hệ Thống Ảnh 1 (Flagship Series)</span>
+              </button>
+              <button
+                onClick={() => setSelectedProductTab('image2')}
+                className={`px-6 py-3.5 rounded-xl font-sans font-black text-xs uppercase tracking-widest transition-all duration-300 flex items-center gap-2 cursor-pointer ${
+                  selectedProductTab === 'image2'
+                    ? 'bg-gradient-to-r from-[#ffd700] to-[#b8860b] text-slate-950 shadow-[0_5px_15px_rgba(255,215,0,0.25)]'
+                    : 'text-[#DDEBFF]/70 hover:text-white hover:bg-slate-950/40'
+                }`}
+              >
+                <Layers className="w-4 h-4 shrink-0" />
+                <span>Hệ Thống Ảnh 2 (Advanced fleet)</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Interactive Responsive Grid Container */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            {/* Left Box - Image Presentation With Automatic Cross-fades */}
+            <div className="lg:col-span-5 flex flex-col items-center justify-center">
+              
+              <AnimatePresence mode="wait">
+                {selectedProductTab === 'image1' ? (
+                  <motion.div
+                    key="tab-image1"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.4 }}
+                    className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border border-[#ffd700]/30 shadow-[0_20px_45px_rgba(0,212,255,0.15)] bg-slate-950 group"
+                  >
+                    <img
+                      src="/src/assets/images/hero_product_pedestal_1781703353546.jpg"
+                      alt="Cận cảnh bộ đôi vàng lọc tổng RainSoft"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent p-6">
+                      <span className="text-[10px] font-mono text-[#ffd700] font-black uppercase tracking-widest">Ảnh 1: Cận Cảnh Trên Bục Trưng Bày</span>
+                      <p className="text-xs text-white mt-1">Sự phối hợp đỉnh cao của van điện tử EC5 nước cứng và tháp lọc Q2 Carbon đen tuyền.</p>
+                    </div>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="tab-image2"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ duration: 0.4 }}
+                    className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden border border-[#ffd700]/30 shadow-[0_20px_45px_rgba(255,215,0,0.15)] bg-slate-950 group"
+                  >
+                    <img
+                      src="/src/assets/images/product_catalog_lineup_1781703379289.jpg"
+                      alt="Bức tranh toàn cảnh các giải pháp lọc RainSoft"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 via-slate-950/40 to-transparent p-6">
+                      <span className="text-[10px] font-mono text-[#00D4FF] font-black uppercase tracking-widest">Ảnh 2: Quần Thể Gia Đình Thiết Bị Đa Diện</span>
+                      <p className="text-xs text-white mt-1">Từ các cột Slim độc lập, thùng muối tách rời đến model Cabinet nguyên khối cho Penthouse.</p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Decorative detail badge */}
+              <div className="mt-4 px-4 py-2 border border-slate-800 rounded-xl bg-[#03142d]/40 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                <span className="text-[10px] font-mono text-slate-400">Hình ảnh bản quyền thuộc về RainSoft Hoa Kỳ & SHAHA VN</span>
+              </div>
+
+            </div>
+
+            {/* Right Box - Detailed specifications of the active selection (The strict filters) */}
+            <div className="lg:col-span-7 space-y-6">
+              
+              <AnimatePresence mode="wait">
+                {selectedProductTab === 'image1' ? (
+                  <motion.div
+                    key="products-image1"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                    className="space-y-6"
+                  >
+                    
+                    {/* Device 1 */}
+                    <div className="p-6 rounded-2xl bg-[#03142d]/50 border border-[#ffd700]/20 hover:border-[#ffd700]/50 transition-all duration-300">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800/60 pb-3 mb-4">
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-8 h-8 rounded-lg bg-[#ffd700]/10 flex items-center justify-center text-[#ffd700] border border-[#ffd700]/20">
+                            <Sparkles className="w-4.5 h-4.5" />
+                          </div>
+                          <h3 className="text-base sm:text-lg font-display font-black text-white uppercase tracking-wider">
+                            Cột Lọc Mềm RainSoft EC5 Platinum
+                          </h3>
+                        </div>
+                        <span className="text-[9px] font-mono font-bold px-2 py-1 rounded bg-[#ffd700]/10 text-[#ffd700] uppercase border border-[#ffd700]/30 tracking-widest self-start sm:self-auto">
+                          Signature Softener
+                        </span>
+                      </div>
+                      
+                      <p className="text-xs text-[#DDEBFF]/95 leading-relaxed font-sans mb-4">
+                        Thiết bị triệt tiêu nước cứng, đá vôi siêu hiệu quả của RainSoft. Trang bị vỏ bọc Chrome tráng bạc mịn sang trọng, chống tia cực tím độc bọt phá, đảm bảo mỹ quan trong nhà hoặc hầm kỹ thuật biệt thự.
+                      </p>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-[#DDEBFF]/80 font-sans">
+                        <div className="flex items-center gap-2 bg-slate-950/30 p-2 rounded-lg border border-slate-900">
+                          <span className="text-emerald-400">✓</span>
+                          <span>Van điện tử LCD thông minh, tự báo bảo trì</span>
+                        </div>
+                        <div className="flex items-center gap-2 bg-slate-950/30 p-2 rounded-lg border border-slate-900">
+                          <span className="text-emerald-400">✓</span>
+                          <span>Chống mất áp lực nước khi sục xả</span>
+                        </div>
+                        <div className="flex items-center gap-2 bg-slate-950/30 p-2 rounded-lg border border-slate-900">
+                          <span className="text-emerald-400">✓</span>
+                          <span>Hạt màng lọc trao đổi ion bền bỉ tủ mẫu</span>
+                        </div>
+                        <div className="flex items-center gap-2 bg-slate-950/30 p-2 rounded-lg border border-slate-900">
+                          <span className="text-emerald-400">✓</span>
+                          <span>BẢO HÀNH TRỌN ĐỜI từ nhà máy Hoa Kỳ</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Device 2 */}
+                    <div className="p-6 rounded-2xl bg-[#03142d]/50 border border-[#00D4FF]/20 hover:border-[#00D4FF]/50 transition-all duration-300">
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800/60 pb-3 mb-4">
+                        <div className="flex items-center gap-2.5">
+                          <div className="w-8 h-8 rounded-lg bg-[#00D4FF]/10 flex items-center justify-center text-[#00D4FF] border border-[#00D4FF]/20">
+                            <Layers className="w-4.5 h-4.5" />
+                          </div>
+                          <h3 className="text-base sm:text-lg font-display font-black text-white uppercase tracking-wider">
+                            Hệ Thống Lọc Than Hoạt Tính Q2 Carbon
+                          </h3>
+                        </div>
+                        <span className="text-[9px] font-mono font-bold px-2 py-1 rounded bg-[#00D4FF]/10 text-[#00D4FF] uppercase border border-[#00D4FF]/35 tracking-widest self-start sm:self-auto">
+                          Luxury Carbon Block
+                        </span>
+                      </div>
+                      
+                      <p className="text-xs text-[#DDEBFF]/95 leading-relaxed font-sans mb-4">
+                        Linh hồn xử lý hóa chất độc, màu mùi lạ và clo dư trong nước máy đô thị. Màu sơn nhám sang trọng, trang trí bằng dải LED tinh tế báo trạng thái lưu thông ở mặt tiền của thiết bị.
+                      </p>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-[#DDEBFF]/80 font-sans">
+                        <div className="flex items-center gap-2 bg-slate-950/30 p-2 rounded-lg border border-slate-900">
+                          <span className="text-emerald-400">✓</span>
+                          <span>Khử sạch clo, vi kim loại, tàn dư công nghiệp</span>
+                        </div>
+                        <div className="flex items-center gap-2 bg-slate-950/30 p-2 rounded-lg border border-slate-900">
+                          <span className="text-emerald-400">✓</span>
+                          <span>Vỏ composite đúc phủ kim cương bền bỉ</span>
+                        </div>
+                        <div className="flex items-center gap-2 bg-slate-950/30 p-2 rounded-lg border border-slate-900">
+                          <span className="text-emerald-400">✓</span>
+                          <span>Không thay màng tốn kém định kỳ</span>
+                        </div>
+                        <div className="flex items-center gap-2 bg-slate-950/30 p-2 rounded-lg border border-slate-900">
+                          <span className="text-emerald-400">✓</span>
+                          <span>Công nghệ tái sinh than tự động độc quyền</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="products-image2"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                    className="space-y-4"
+                  >
+                    
+                    {/* Device 3 */}
+                    <div className="p-5 rounded-2xl bg-[#03142d]/50 border border-slate-800 hover:border-slate-700 transition-all">
+                      <div className="flex items-center justify-between border-b border-slate-800 pb-2 mb-3">
+                        <h4 className="text-sm font-display font-black text-white uppercase tracking-wider">Hệ Lọc Sinh Hoạt Cabinet Nguyên Khối Lọc-Mềm Tích Hợp</h4>
+                        <span className="text-[8px] font-mono text-[#ffd700] uppercase font-bold bg-[#ffd700]/5 px-1.5 py-0.5 rounded">All-In-One Elite</span>
+                      </div>
+                      <p className="text-xs text-[#DDEBFF]/80 leading-relaxed font-sans mb-2">
+                        Thiết kế thùng chứa muối thông minh ôm trọn cột làm mềm bên trong. Vẻ ngoài thanh thoát màu trứng sữa sang trọng tối giản, đo lường khớp tắp cho chung cư hạng sang, Penthouse hay hộ villa diện tích giới hạn.
+                      </p>
+                      <div className="text-[10px] text-slate-400 font-mono flex items-center gap-3">
+                        <span>Tiết kiệm diện tích: 55%</span>
+                        <span>•</span>
+                        <span>Đúc nhựa nhiệt dẻo ABS cường độ cao</span>
+                      </div>
+                    </div>
+
+                    {/* Device 4 */}
+                    <div className="p-5 rounded-2xl bg-[#03142d]/50 border border-slate-800 hover:border-slate-700 transition-all">
+                      <div className="flex items-center justify-between border-b border-slate-800 pb-2 mb-3">
+                        <h4 className="text-sm font-display font-black text-white uppercase tracking-wider">Hệ Cột Đôi Chạy Song Song RainSoft Twin Tank</h4>
+                        <span className="text-[8px] font-mono text-[#00D4FF] uppercase font-bold bg-[#00D4FF]/5 px-1.5 py-0.5 rounded">Villa & Castle Capacity</span>
+                      </div>
+                      <p className="text-xs text-[#DDEBFF]/80 leading-relaxed font-sans mb-2">
+                        Giải cấu trúc cho biệt thự quy mô lớn, lâu đài hay tòa dinh dinh đại gia đình. Hai cột trao đổi ion liên hợp luân phiên sục rửa giúp dòng nước mềm vô tận 24/7, không bao giờ ngắt áp lực nước.
+                      </p>
+                      <div className="text-[10px] text-slate-400 font-mono flex items-center gap-3">
+                        <span>Lưu lượng vượt lớn cực đại</span>
+                        <span>•</span>
+                        <span>Không gián đoạn trong chu trình hoàn nguyên</span>
+                      </div>
+                    </div>
+
+                    {/* Device 5 */}
+                    <div className="p-5 rounded-2xl bg-[#03142d]/50 border border-slate-800 hover:border-slate-700 transition-all">
+                      <div className="flex items-center justify-between border-b border-slate-800 pb-2 mb-3">
+                        <h4 className="text-sm font-display font-black text-white uppercase tracking-wider">Tháp Hấp Thụ Cacbon Tích Hợp Bán Công Nghiệp TC-M</h4>
+                        <span className="text-[8px] font-mono text-[#ffd700] uppercase font-bold bg-[#ffd700]/5 px-1.5 py-0.5 rounded">High volume series</span>
+                      </div>
+                      <p className="text-xs text-[#DDEBFF]/80 leading-relaxed font-sans mb-2">
+                        Phiên cột chất liệu composite bọc sợi hữu cơ bền nhiệt và lực vượt cấp. Với van sục rửa tự động định lưu, lọc sạch toàn bộ mỡ dầu, rỉ than hay cặn bẩn thô ở nguồn giếng khoan quy mô tư nhân sâu rộng.
+                      </p>
+                      <div className="text-[10px] text-slate-400 font-mono flex items-center gap-3">
+                        <span>Vận hành tự động tự rửa lập trình sẵn</span>
+                        <span>•</span>
+                        <span>Độ bền cao dải nhiệt độ lên tới 50°C</span>
+                      </div>
+                    </div>
+
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
+              {/* Central CTA of the section */}
+              <div className="pt-4 flex flex-col sm:flex-row items-center gap-4">
+                <button 
+                  onClick={() => {
+                    const el = document.getElementById('onboarding');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="w-full sm:w-auto px-6 py-3.5 rounded-xl font-sans font-black text-[11px] uppercase tracking-wider bg-gradient-to-r from-slate-900 to-slate-950 border border-[#ffd700]/40 text-[#ffd700] hover:text-white hover:bg-[#ffd705]/10 duration-200 cursor-pointer flex items-center justify-center gap-2"
+                >
+                  <PhoneCall className="w-4 h-4 shrink-0 text-[#ffd700]" />
+                  <span>Yêu cầu Tư vấn 3D tủ mẫu & Báo giá đại lý</span>
+                </button>
+              </div>
+
             </div>
 
           </div>
@@ -452,12 +1231,12 @@ export default function App() {
       <section className="py-24 bg-[#020617] border-t border-[#d4af37]/15 relative z-10" id="segments">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center space-y-4 mb-16 max-w-3xl mx-auto">
+          <div className="text-center space-y-4 mb-16 max-w-5xl mx-auto">
             <span className="text-xs font-mono font-bold text-[#00D4FF] uppercase tracking-widest block">Đối tác tiềm năng</span>
-            <h2 className="text-3xl sm:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none md:whitespace-nowrap">
               Phân Khúc Đối Tác Phù Hợp
             </h2>
-            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed font-normal">
+            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed font-normal md:whitespace-nowrap">
               Lựa chọn mô hình định hình kinh doanh chính để nhận định cơ hội hợp lực phát triển và dự toán dòng tiền khai phá của bạn.
             </p>
           </div>
@@ -573,12 +1352,12 @@ export default function App() {
       <section className="py-24 bg-[#020617] border-t border-[#d4af37]/15 relative z-10" id="supports">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center space-y-4 mb-20 max-w-3xl mx-auto">
+          <div className="text-center space-y-4 mb-20 max-w-5xl mx-auto">
             <span className="text-xs font-mono font-bold text-[#00D4FF] uppercase tracking-widest block">Hỗ trợ đối tác toàn diện</span>
-            <h2 className="text-3xl sm:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none md:whitespace-nowrap">
               SHAHA Việt Nam Đồng Hành Phát Triển
             </h2>
-            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal">
+            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal md:whitespace-nowrap">
               Chúng tôi dẹp bỏ hoàn thành mọi rào cản bước vào ngành nước phân khúc xa xỉ bằng các chương trình hỗ trợ, vali test, 3D showroom độc quyền độc đáo.
             </p>
           </div>
@@ -622,12 +1401,12 @@ export default function App() {
       <section className="py-24 bg-[#020617] border-t border-[#d4af37]/15 relative z-10" id="roadmap">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center space-y-4 mb-20 max-w-3xl mx-auto">
+          <div className="text-center space-y-4 mb-20 max-w-5xl mx-auto">
             <span className="text-xs font-mono font-bold text-[#00D4FF] uppercase tracking-widest block">Lộ trình 5 giai đoạn</span>
-            <h2 className="text-3xl sm:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none md:whitespace-nowrap">
               Mô Hình Đồng Hành Phát Triển
             </h2>
-            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal">
+            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal md:whitespace-nowrap">
               Triệt tiêu rủi ro kinh doanh, hỗ trợ đại lý xây dựng quy trình tiếp cận chuẩn mực từ thực chiến, đào tạo vali tới mở rộng showroom vùng thịnh vượng.
             </p>
           </div>
@@ -718,12 +1497,12 @@ export default function App() {
       <section className="py-24 bg-[#020617] border-t border-[#d4af37]/15 relative z-10 animate-fade-in" id="market">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center space-y-4 mb-20 max-w-3xl mx-auto font-sans">
+          <div className="text-center space-y-4 mb-20 max-w-5xl mx-auto font-sans">
             <span className="text-xs font-mono font-bold text-[#00D4FF] uppercase tracking-widest block">Sức hút thị trường lọc tổng</span>
-            <h2 className="text-3xl sm:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none md:whitespace-nowrap">
               Thị Trường Đón Đầu Phân Khúc Cao Cấp
             </h2>
-            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal">
+            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal md:whitespace-nowrap">
               Lọc thô tại vòi hay lọc nước uống nhỏ giọt chỉ xử lý ngọn. Giới biệt thự cao cấp đòi hỏi nguồn nước mềm trung tâm bảo vệ trọn vẹn sức khỏe sinh hoạt lâu năm.
             </p>
           </div>
@@ -823,72 +1602,244 @@ export default function App() {
       <section className="py-24 bg-[#020617] border-t border-[#d4af37]/15 relative z-10 animate-fade-in" id="roadmap-steps">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 font-sans">
           
-          <div className="text-center space-y-4 mb-20 max-w-3xl mx-auto">
-            <span className="text-xs font-mono font-bold text-[#00D4FF] uppercase tracking-widest block">Gia nhập Rainsoft</span>
-            <h2 className="text-3xl sm:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none">
-              Quy Trình Gia Nhập 5 Bước Thần Tốc
+          <div className="text-center space-y-4 mb-20 max-w-5xl mx-auto">
+            <span className="text-xs font-bold text-[#00D4FF] uppercase tracking-[0.25em] block">GIA NHẬP RAINSOFT</span>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-[2.75rem] font-display font-black text-white tracking-tight uppercase leading-tight !mt-2 md:whitespace-nowrap">
+              QUY TRÌNH GIA NHẬP 5 BƯỚC <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffd700] via-[#fff3b0] to-[#b8860b] drop-shadow-[0_4px_10px_rgba(255,215,0,0.25)]">THẦN TỐC</span>
             </h2>
-            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal">
-              Quy trình thiết hướng năng lực khoa học từ lúc khai báo đến lúc showroom chính thức hoạt động gặt hái dòng tiền.
+            <p className="text-xs sm:text-sm text-[#DDEBFF]/85 leading-relaxed max-w-none mx-auto font-normal md:whitespace-nowrap">
+              Quy trình thiết hưởng năng lực khoa học từ lúc khai báo đến lúc showroom chính thức hoạt động gặt hái dòng tiền.
             </p>
           </div>
 
-          {/* 5 Steps Grid timeline with custom luxury gold border styling */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto text-left relative">
+          {/* 5 Steps Grid timeline with custom luxury colored glowing border stylings */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-7xl mx-auto text-left relative">
             
             {/* Step 1 */}
-            <div className="p-6 rounded-3xl bg-[#03142d]/65 border border-[#d4af37]/25 hover:border-[#ffd700] space-y-4 relative overflow-hidden group shadow-[0_10px_20px_rgba(0,0,0,0.15)] transition-all">
-              <span className="text-xs font-mono font-bold text-[#ffd700] bg-[#ffd700]/10 border border-[#ffd700]/25 w-9 h-9 rounded-xl flex items-center justify-center">
-                B1
-              </span>
-              <h4 className="font-display font-black text-white text-base uppercase">Đăng ký thông tin</h4>
-              <p className="text-xs text-[#DDEBFF]/80 leading-relaxed font-sans">
-                Đăng ký trực quan thông qua form kê khai năng lực trực tuyến ngay tại chân trang này.
-              </p>
+            <div className="p-5 rounded-[2rem] bg-[#03142d]/80 backdrop-blur-md border border-[#ffd700]/30 hover:border-[#ffd700] shadow-[0_0_20px_rgba(255,215,0,0.05)] hover:shadow-[0_0_35px_rgba(255,215,0,0.25)] transition-all duration-300 flex flex-col justify-between relative group">
+              {/* Chevron connector to step 2 */}
+              <div className="hidden lg:flex items-center justify-center pointer-events-none z-20 absolute top-[45%] -right-7 translate-x-1/2 -translate-y-1/2 text-[#00D4FF]">
+                <motion.div 
+                  initial={{ opacity: 0.5, x: -3 }}
+                  animate={{ opacity: 1, x: 3 }}
+                  transition={{ repeat: Infinity, duration: 1.5, repeatType: "reverse" }}
+                  className="flex gap-0.5"
+                >
+                  <ChevronRight className="w-5 h-5 stroke-[3]" />
+                  <ChevronRight className="w-5 h-5 stroke-[3] -ml-4" />
+                </motion.div>
+              </div>
+
+              <div>
+                <div className="flex justify-start">
+                  <span className="text-[11px] font-mono font-bold text-[#ffd700] bg-[#ffd700]/10 border border-[#ffd700]/30 px-3 py-1 rounded-lg">
+                    B1
+                  </span>
+                </div>
+                
+                <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden my-4 border border-[#ffd700]/10 bg-[#020d1c] shadow-inner relative">
+                  <img 
+                    src="/src/assets/images/step1_register_1781702784446.jpg" 
+                    alt="Đăng ký thông tin" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+
+                <div className="space-y-2 text-center">
+                  <h4 className="font-display font-black text-white text-[15px] sm:text-base tracking-wide uppercase transition-colors group-hover:text-[#ffd700]">
+                    ĐĂNG KÝ THÔNG TIN
+                  </h4>
+                  <p className="text-xs text-[#DDEBFF]/80 leading-relaxed font-sans mt-2">
+                    Đăng ký trực quan thông qua form dễ khai năng lực trực tuyến ngay tại chân trang này.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex justify-center pt-4 border-t border-slate-800/60 mt-4">
+                <div className="p-2.5 bg-[#ffd700]/10 rounded-2xl text-[#ffd700] shadow-[0_0_15px_rgba(255,215,0,0.15)] transition-transform duration-300 group-hover:scale-110">
+                  <FileEdit className="w-5.5 h-5.5 stroke-[1.5]" />
+                </div>
+              </div>
             </div>
 
             {/* Step 2 */}
-            <div className="p-6 rounded-3xl bg-[#03142d]/65 border border-[#d4af37]/25 hover:border-[#ffd700] space-y-4 relative overflow-hidden group shadow-[0_10px_20px_rgba(0,0,0,0.15)] transition-all">
-              <span className="text-xs font-mono font-bold text-[#00D4FF] bg-[#00D4FF]/10 border border-[#00D4FF]/25 w-9 h-9 rounded-xl flex items-center justify-center">
-                B2
-              </span>
-              <h4 className="font-display font-black text-white text-base uppercase">Trao đổi thẩm định</h4>
-              <p className="text-xs text-[#DDEBFF]/80 leading-relaxed font-sans">
-                Chuyên viên SHAHA VN liên hệ đánh giá khu vực độc quyền và năng lực kỹ thuật cơ bản.
-              </p>
+            <div className="p-5 rounded-[2rem] bg-[#03142d]/80 backdrop-blur-md border border-[#00D4FF]/30 hover:border-[#00D4FF] shadow-[0_0_20px_rgba(0,212,255,0.05)] hover:shadow-[0_0_35px_rgba(0,212,255,0.25)] transition-all duration-300 flex flex-col justify-between relative group">
+              {/* Chevron connector to step 3 */}
+              <div className="hidden lg:flex items-center justify-center pointer-events-none z-20 absolute top-[45%] -right-7 translate-x-1/2 -translate-y-1/2 text-purple-400">
+                <motion.div 
+                  initial={{ opacity: 0.5, x: -3 }}
+                  animate={{ opacity: 1, x: 3 }}
+                  transition={{ repeat: Infinity, duration: 1.5, repeatType: "reverse" }}
+                  className="flex gap-0.5"
+                >
+                  <ChevronRight className="w-5 h-5 stroke-[3]" />
+                  <ChevronRight className="w-5 h-5 stroke-[3] -ml-4" />
+                </motion.div>
+              </div>
+
+              <div>
+                <div className="flex justify-start">
+                  <span className="text-[11px] font-mono font-bold text-[#00D4FF] bg-[#00D4FF]/10 border border-[#00D4FF]/30 px-3 py-1 rounded-lg">
+                    B2
+                  </span>
+                </div>
+                
+                <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden my-4 border border-[#00D4FF]/10 bg-[#020d1c] shadow-inner relative">
+                  <img 
+                    src="/src/assets/images/step2_consult_1781702801542.jpg" 
+                    alt="Trao đổi thẩm định" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+
+                <div className="space-y-2 text-center">
+                  <h4 className="font-display font-black text-white text-[15px] sm:text-base tracking-wide uppercase transition-colors group-hover:text-[#00D4FF]">
+                    TRAO ĐỔI THẨM ĐỊNH
+                  </h4>
+                  <p className="text-xs text-[#DDEBFF]/80 leading-relaxed font-sans mt-2">
+                    Chuyên viên SHAHA VN liên hệ đánh giá khu vực độc quyền và năng lực kỹ thuật cơ bản.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex justify-center pt-4 border-t border-slate-800/60 mt-4">
+                <div className="p-2.5 bg-[#00D4FF]/10 rounded-2xl text-[#00D4FF] shadow-[0_0_15px_rgba(0,212,255,0.15)] transition-transform duration-300 group-hover:scale-110">
+                  <MessageSquare className="w-5.5 h-5.5 stroke-[1.5]" />
+                </div>
+              </div>
             </div>
 
             {/* Step 3 */}
-            <div className="p-6 rounded-3xl bg-[#03142d]/65 border border-[#d4af37]/25 hover:border-[#ffd700] space-y-4 relative overflow-hidden group shadow-[0_10px_20px_rgba(0,0,0,0.15)] transition-all">
-              <span className="text-xs font-mono font-bold text-purple-400 bg-purple-500/10 border border-purple-500/25 w-9 h-9 rounded-xl flex items-center justify-center">
-                B3
-              </span>
-              <h4 className="font-display font-black text-white text-base uppercase">Gặp gỡ định hướng</h4>
-              <p className="text-xs text-[#DDEBFF]/80 leading-relaxed font-sans">
-                Tọa đàm trực tiếp tại Trụ sở/Showroom mẫu của SHAHA xem dây chuyền thực nghiệm.
-              </p>
+            <div className="p-5 rounded-[2rem] bg-[#03142d]/80 backdrop-blur-md border border-purple-500/30 hover:border-purple-400 shadow-[0_0_20px_rgba(168,85,247,0.05)] hover:shadow-[0_0_35px_rgba(168,85,247,0.25)] transition-all duration-300 flex flex-col justify-between relative group">
+              {/* Chevron connector to step 4 */}
+              <div className="hidden lg:flex items-center justify-center pointer-events-none z-20 absolute top-[45%] -right-7 translate-x-1/2 -translate-y-1/2 text-amber-500">
+                <motion.div 
+                  initial={{ opacity: 0.5, x: -3 }}
+                  animate={{ opacity: 1, x: 3 }}
+                  transition={{ repeat: Infinity, duration: 1.5, repeatType: "reverse" }}
+                  className="flex gap-0.5"
+                >
+                  <ChevronRight className="w-5 h-5 stroke-[3]" />
+                  <ChevronRight className="w-5 h-5 stroke-[3] -ml-4" />
+                </motion.div>
+              </div>
+
+              <div>
+                <div className="flex justify-start">
+                  <span className="text-[11px] font-mono font-bold text-purple-400 bg-purple-500/10 border border-purple-500/30 px-3 py-1 rounded-lg">
+                    B3
+                  </span>
+                </div>
+                
+                <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden my-4 border border-purple-200/10 bg-[#020d1c] shadow-inner relative">
+                  <img 
+                    src="/src/assets/images/step3_workshop_1781702818621.jpg" 
+                    alt="Gặp gỡ định hướng" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+
+                <div className="space-y-2 text-center">
+                  <h4 className="font-display font-black text-white text-[15px] sm:text-base tracking-wide uppercase transition-colors group-hover:text-purple-400">
+                    GẶP GỠ ĐỊNH HƯỚNG
+                  </h4>
+                  <p className="text-xs text-[#DDEBFF]/80 leading-relaxed font-sans mt-2">
+                    Tọa đàm trực tiếp tại Trụ sở/Showroom mẫu của SHAHA xem đầy chuyền thực nghiệm.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex justify-center pt-4 border-t border-slate-800/60 mt-4">
+                <div className="p-2.5 bg-purple-500/10 rounded-2xl text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.15)] transition-transform duration-300 group-hover:scale-110">
+                  <Users className="w-5.5 h-5.5 stroke-[1.5]" />
+                </div>
+              </div>
             </div>
 
             {/* Step 4 */}
-            <div className="p-6 rounded-3xl bg-[#03142d]/65 border border-[#d4af37]/25 hover:border-[#ffd700] space-y-4 relative overflow-hidden group shadow-[0_10px_20px_rgba(0,0,0,0.15)] transition-all">
-              <span className="text-xs font-mono font-bold text-amber-500 bg-amber-500/10 border border-amber-500/20 w-9 h-9 rounded-xl flex items-center justify-center">
-                B4
-              </span>
-              <h4 className="font-display font-black text-white text-base uppercase">Thống nhất chính sách</h4>
-              <p className="text-xs text-[#DDEBFF]/80 leading-relaxed font-sans">
-                Ký biên bản hợp tác chính sách chiết khấu, khu vực ưu đãi và lịch khởi động.
-              </p>
+            <div className="p-5 rounded-[2rem] bg-[#03142d]/80 backdrop-blur-md border border-amber-500/30 hover:border-amber-400 shadow-[0_0_20px_rgba(245,158,11,0.05)] hover:shadow-[0_0_35px_rgba(245,158,11,0.25)] transition-all duration-300 flex flex-col justify-between relative group">
+              {/* Chevron connector to step 5 */}
+              <div className="hidden lg:flex items-center justify-center pointer-events-none z-20 absolute top-[45%] -right-7 translate-x-1/2 -translate-y-1/2 text-emerald-400">
+                <motion.div 
+                  initial={{ opacity: 0.5, x: -3 }}
+                  animate={{ opacity: 1, x: 3 }}
+                  transition={{ repeat: Infinity, duration: 1.5, repeatType: "reverse" }}
+                  className="flex gap-0.5"
+                >
+                  <ChevronRight className="w-5 h-5 stroke-[3]" />
+                  <ChevronRight className="w-5 h-5 stroke-[3] -ml-4" />
+                </motion.div>
+              </div>
+
+              <div>
+                <div className="flex justify-start">
+                  <span className="text-[11px] font-mono font-bold text-amber-500 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-lg">
+                    B4
+                  </span>
+                </div>
+                
+                <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden my-4 border border-amber-500/10 bg-[#020d1c] shadow-inner relative">
+                  <img 
+                    src="/src/assets/images/step4_agreement_1781702836195.jpg" 
+                    alt="Thống nhất chính sách" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+
+                <div className="space-y-2 text-center">
+                  <h4 className="font-display font-black text-white text-[15px] sm:text-base tracking-wide uppercase transition-colors group-hover:text-amber-500">
+                    THỐNG NHẤT CHÍNH SÁCH
+                  </h4>
+                  <p className="text-xs text-[#DDEBFF]/80 leading-relaxed font-sans mt-2">
+                    Ký biên bản hợp tác chính sách chiết khấu, khu vực ưu đãi và lịch khởi động.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex justify-center pt-4 border-t border-slate-800/60 mt-4">
+                <div className="p-2.5 bg-amber-500/10 rounded-2xl text-amber-500 shadow-[0_0_15px_rgba(245,158,11,0.15)] transition-transform duration-300 group-hover:scale-110">
+                  <Handshake className="w-5.5 h-5.5 stroke-[1.5]" />
+                </div>
+              </div>
             </div>
 
             {/* Step 5 */}
-            <div className="p-6 rounded-3xl bg-[#03142d]/85 border border-[#ffd700]/40 hover:border-[#ffd700] space-y-4 relative overflow-hidden group shadow-[0_0_20px_rgba(255,215,0,0.1)] transition-all glow-blue">
-              <span className="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 w-8 h-8 rounded-lg flex items-center justify-center animate-pulse">
-                B5
-              </span>
-              <h4 className="font-display font-black text-white text-base uppercase">Khởi động bùng nổ</h4>
-              <p className="text-xs text-[#DDEBFF]/90 leading-relaxed font-sans">
-                Bàn giao Brochure catalog, vali Test Kit, thi công tủ trưng bày và cấp chứng nhận chính thức.
-              </p>
+            <div className="p-5 rounded-[2rem] bg-[#03142d]/90 backdrop-blur-md border border-emerald-500/40 hover:border-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.06)] hover:shadow-[0_0_35px_rgba(16,185,129,0.3)] transition-all duration-300 flex flex-col justify-between relative group">
+              <div>
+                <div className="flex justify-start">
+                  <span className="text-[11px] font-mono font-bold text-emerald-400 bg-emerald-500/15 border border-emerald-500/35 px-3 py-1 rounded-lg animate-pulse">
+                    B5
+                  </span>
+                </div>
+                
+                <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden my-4 border border-emerald-500/20 bg-[#020d1c] shadow-inner relative">
+                  <img 
+                    src="/src/assets/images/step5_showroom_1781702851418.jpg" 
+                    alt="Khởi động bùng nổ" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+
+                <div className="space-y-2 text-center">
+                  <h4 className="font-display font-black text-white text-[15px] sm:text-base tracking-wide uppercase transition-colors group-hover:text-emerald-400">
+                    KHỞI ĐỘNG BÙNG NỔ
+                  </h4>
+                  <p className="text-xs text-[#DDEBFF]/90 leading-relaxed font-sans mt-2">
+                    Bàn giao Brochure catalog, vali Test Kit, thi công tủ trưng bày và cấp chứng nhận chính thức.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex justify-center pt-4 border-t border-slate-800/60 mt-4">
+                <div className="p-2.5 bg-emerald-500/10 rounded-2xl text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.15)] transition-transform duration-300 group-hover:scale-110">
+                  <Rocket className="w-5.5 h-5.5 stroke-[1.5]" />
+                </div>
+              </div>
             </div>
 
           </div>
@@ -900,12 +1851,12 @@ export default function App() {
       <section className="py-24 bg-[#020617] border-t border-[#d4af37]/15 relative z-10" id="onboarding">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center space-y-4 mb-12 max-w-3xl mx-auto">
+          <div className="text-center space-y-4 mb-12 max-w-5xl mx-auto">
             <span className="text-xs font-mono font-bold text-[#00D4FF] uppercase tracking-widest block">Mở khóa cơ hội</span>
-            <h2 className="text-3xl sm:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none md:whitespace-nowrap">
               Bắt Đầu Hợp Tác RainSoft Ngay
             </h2>
-            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal">
+            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal md:whitespace-nowrap">
               Điền nhanh các thông tin năng lực dưới để chuyên viên SHAHA Việt Nam chuẩn bị các mẫu hồ sơ đại lý tốt nhất trước khi gọi điện liên hệ cho bạn.
             </p>
           </div>
