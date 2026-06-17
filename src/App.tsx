@@ -199,7 +199,7 @@ export default function App() {
       </AnimatePresence>
 
       {/* SECTION 1: HERO - BANNER ĐẦU TRANG PHONG CÁCH QUẦN THỂ SIÊU LUXURY HOA KỲ */}
-      <section className="relative pt-12 pb-24 sm:pb-36 overflow-hidden z-10" id="hero">
+      <section className="relative pt-4 pb-6 sm:pt-6 sm:pb-8 lg:pt-8 lg:pb-10 overflow-hidden z-10" id="hero">
         
         {/* Deep starry space and dynamic water ambient backgrounds */}
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-[#01091a] via-[#02132b] to-[#01091a] -z-10" />
@@ -210,98 +210,98 @@ export default function App() {
         <div className="absolute top-[40%] right-[10%] w-[550px] h-[550px] bg-gradient-to-tr from-[#00D4FF]/10 to-[#ffd700]/5 rounded-full blur-[140px] pointer-events-none animate-pulse-subtle" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left Column (7 of 12) - Majestic Texts and Grid Badges */}
-            <div className="lg:col-span-7 text-left space-y-8">
+            <div className="lg:col-span-7 text-left space-y-5 lg:space-y-6">
               
               {/* Premium Golden Badge (Matched strictly with Image 1 border style) */}
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#03142d]/90 border border-[#ffd700]/45 text-amber-300 text-[10px] sm:text-xs font-mono font-black tracking-[0.08em] uppercase shadow-[0_0_20px_rgba(255,215,0,0.15)]">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#03142d]/90 border border-[#ffd700]/45 text-amber-300 text-[9px] sm:text-xs font-mono font-black tracking-[0.08em] uppercase shadow-[0_0_15px_rgba(255,215,0,0.12)]">
                 <span className="text-[#ffd700] text-sm animate-pulse">★</span>
                 <span>RainSoft USA Since 1953 • Chuẩn Mỹ Hoàn Toàn</span>
               </div>
 
               {/* High-End Metallic Heading with Laser Gold and Vivid Cyan */}
-              <div className="space-y-2">
-                <h1 className="text-3xl sm:text-5xl lg:text-[5.5rem] font-display font-black tracking-tight leading-[1.05] uppercase">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffd700] via-[#fff3b0] to-[#b8860b] drop-shadow-[0_3px_12px_rgba(255,215,0,0.35)] block">
+              <div className="space-y-1">
+                <h1 className="text-2xl sm:text-4xl lg:text-[3.25rem] font-display font-black tracking-tight leading-[1.1] uppercase">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#ffd700] via-[#fff3b0] to-[#b8860b] drop-shadow-[0_2px_8px_rgba(255,215,0,0.3)] block">
                     Trở thành đối tác
                   </span>
-                  <span className="text-white block mt-1 tracking-tight">
+                  <span className="text-white block mt-0.5 tracking-tight">
                     phát triển RainSoft
                   </span>
                 </h1>
-                <span className="text-[#00D4FF] text-2xl sm:text-4xl lg:text-[2.6rem] tracking-[0.25em] font-mono font-black uppercase block pt-2 drop-shadow-[0_0_15px_rgba(0,212,255,0.4)]">
+                <span className="text-[#00D4FF] text-lg sm:text-2xl lg:text-[1.65rem] tracking-[0.2em] font-mono font-black uppercase block pt-1 drop-shadow-[0_0_10px_rgba(0,212,255,0.35)]">
                   tại việt nam
                 </span>
               </div>
 
               {/* Descriptive context matching precisely */}
-              <p className="text-xs sm:text-sm text-[#DDEBFF]/95 leading-relaxed max-w-2xl font-normal font-sans">
+              <p className="text-[11px] sm:text-xs text-[#DDEBFF]/90 leading-relaxed max-w-xl font-normal font-sans">
                 Cùng <strong className="text-white font-extrabold border-b border-[#00D4FF]/45 pb-0.5">SHAHA Việt Nam</strong> xây dựng hệ sinh thái lọc tổng cao cấp toàn cầu. RainSoft USA từ 1953 – thương hiệu lọc tổng xa xỉ hàng đầu thế giới, định vị cho nhóm khách hàng biệt thự, villa, penthouse, căn hộ duplex sang trọng, và các gia đình sở hữu cuộc sống thượng đỉnh có tiêu chuẩn sinh hoạt cao nhất.
               </p>
 
               {/* 4 Custom Feature badging cards arranged exactly like Image 1 2x2 grid with high visual rhythm */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-xl">
+              <div className="grid grid-cols-2 gap-2 sm:gap-3 max-w-xl">
                 
                 {/* Badge 1 */}
-                <div className="p-4 rounded-2xl bg-[#03142d]/80 border border-[#ffd700]/30 hover:border-[#ffd700] hover:bg-[#071F42] hover:shadow-[0_0_20px_rgba(255,215,0,0.15)] duration-300 flex items-center gap-4 group">
-                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#ffd700] to-[#b8860b] flex items-center justify-center text-slate-950 shadow-[0_3px_10px_rgba(255,215,0,0.3)] shrink-0 transition-transform group-hover:scale-110">
-                    <ShieldCheck className="w-5.5 h-5.5" />
+                <div className="p-2 xs:p-3 sm:p-3.5 rounded-lg xs:rounded-xl bg-[#03142d]/80 border border-[#ffd700]/30 hover:border-[#ffd700] hover:bg-[#071F42] hover:shadow-[0_0_15px_rgba(255,215,0,0.12)] duration-300 flex items-center gap-2 xs:gap-3 group">
+                  <div className="w-7 h-7 xs:w-9 xs:h-9 rounded-full bg-gradient-to-br from-[#ffd700] to-[#b8860b] flex items-center justify-center text-slate-950 shadow-[0_2px_8px_rgba(255,215,0,0.25)] shrink-0 transition-transform group-hover:scale-110 animate-pulse-subtle">
+                    <ShieldCheck className="w-3.5 h-3.5 xs:w-4.5 xs:h-4.5" />
                   </div>
                   <div>
-                    <h4 className="text-[11px] font-sans font-black text-white tracking-widest uppercase">HIỆU NĂNG XỬ LÝ</h4>
-                    <p className="text-[10px] text-[#00D4FF] font-mono tracking-wider font-bold mt-0.5">SIÊU BỨT PHÁ</p>
+                    <h4 className="text-[8px] xs:text-[10px] font-sans font-black text-white tracking-wider sm:tracking-widest uppercase">HIỆU NĂNG XỬ LÝ</h4>
+                    <p className="text-[7.5px] xs:text-[9px] text-[#00D4FF] font-mono tracking-wider font-bold mt-0.5">SIÊU BỨT PHÁ</p>
                   </div>
                 </div>
 
                 {/* Badge 2 */}
-                <div className="p-4 rounded-2xl bg-[#03142d]/80 border border-[#ffd700]/30 hover:border-[#ffd700] hover:bg-[#071F42] hover:shadow-[0_0_20px_rgba(255,215,0,0.15)] duration-300 flex items-center gap-4 group">
-                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#ffd700] to-[#b8860b] flex items-center justify-center text-slate-950 shadow-[0_3px_10px_rgba(255,215,0,0.3)] shrink-0 transition-transform group-hover:scale-110">
-                    <Award className="w-5.5 h-5.5" />
+                <div className="p-2 xs:p-3 sm:p-3.5 rounded-lg xs:rounded-xl bg-[#03142d]/80 border border-[#ffd700]/30 hover:border-[#ffd700] hover:bg-[#071F42] hover:shadow-[0_0_15px_rgba(255,215,0,0.12)] duration-300 flex items-center gap-2 xs:gap-3 group">
+                  <div className="w-7 h-7 xs:w-9 xs:h-9 rounded-full bg-gradient-to-br from-[#ffd700] to-[#b8860b] flex items-center justify-center text-slate-950 shadow-[0_2px_8px_rgba(255,215,0,0.25)] shrink-0 transition-transform group-hover:scale-110 animate-pulse-subtle">
+                    <Award className="w-3.5 h-3.5 xs:w-4.5 xs:h-4.5" />
                   </div>
                   <div>
-                    <h4 className="text-[11px] font-sans font-black text-white tracking-widest uppercase">BẢO HÀNH TRỌN ĐỜI</h4>
-                    <p className="text-[10px] text-[#ffd700] font-mono tracking-wider font-bold mt-0.5">TỪ HOA KỲ</p>
+                    <h4 className="text-[8px] xs:text-[10px] font-sans font-black text-white tracking-wider sm:tracking-widest uppercase">BẢO HÀNH TRỌN ĐỜI</h4>
+                    <p className="text-[7.5px] xs:text-[9px] text-[#ffd700] font-mono tracking-wider font-bold mt-0.5">TỪ HOA KỲ</p>
                   </div>
                 </div>
 
                 {/* Badge 3 */}
-                <div className="p-4 rounded-2xl bg-[#03142d]/80 border border-[#ffd700]/30 hover:border-[#ffd700] hover:bg-[#071F42] hover:shadow-[0_0_20px_rgba(255,215,0,0.15)] duration-300 flex items-center gap-4 group">
-                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#ffd700] to-[#b8860b] flex items-center justify-center text-slate-950 shadow-[0_3px_10px_rgba(255,215,0,0.3)] shrink-0 transition-transform group-hover:scale-110">
-                    <Store className="w-5.5 h-5.5" />
+                <div className="p-2 xs:p-3 sm:p-3.5 rounded-lg xs:rounded-xl bg-[#03142d]/80 border border-[#ffd700]/30 hover:border-[#ffd700] hover:bg-[#071F42] hover:shadow-[0_0_15px_rgba(255,215,0,0.12)] duration-300 flex items-center gap-2 xs:gap-3 group">
+                  <div className="w-7 h-7 xs:w-9 xs:h-9 rounded-full bg-gradient-to-br from-[#ffd700] to-[#b8860b] flex items-center justify-center text-slate-950 shadow-[0_2px_8px_rgba(255,215,0,0.25)] shrink-0 transition-transform group-hover:scale-110 animate-pulse-subtle">
+                    <Store className="w-3.5 h-3.5 xs:w-4.5 xs:h-4.5" />
                   </div>
                   <div>
-                    <h4 className="text-[11px] font-sans font-black text-white tracking-widest uppercase">HỖ TRỢ SHOWROOM</h4>
-                    <p className="text-[10px] text-[#00D4FF] font-mono tracking-wider font-bold mt-0.5">VÀ 3D TỦ MẪU</p>
+                    <h4 className="text-[8px] xs:text-[10px] font-sans font-black text-white tracking-wider sm:tracking-widest uppercase">HỖ TRỢ SHOWROOM</h4>
+                    <p className="text-[7.5px] xs:text-[9px] text-[#00D4FF] font-mono tracking-wider font-bold mt-0.5">VÀ 3D TỦ MẪU</p>
                   </div>
                 </div>
 
                 {/* Badge 4 */}
-                <div className="p-4 rounded-2xl bg-[#03142d]/80 border border-[#ffd700]/30 hover:border-[#ffd700] hover:bg-[#071F42] hover:shadow-[0_0_20px_rgba(255,215,0,0.15)] duration-300 flex items-center gap-4 group">
-                  <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#ffd700] to-[#b8860b] flex items-center justify-center text-slate-950 shadow-[0_3px_10px_rgba(255,215,0,0.3)] shrink-0 transition-transform group-hover:scale-110">
-                    <Droplets className="w-5.5 h-5.5" />
+                <div className="p-2 xs:p-3 sm:p-3.5 rounded-lg xs:rounded-xl bg-[#03142d]/80 border border-[#ffd700]/30 hover:border-[#ffd700] hover:bg-[#071F42] hover:shadow-[0_0_15px_rgba(255,215,0,0.12)] duration-300 flex items-center gap-2 xs:gap-3 group">
+                  <div className="w-7 h-7 xs:w-9 xs:h-9 rounded-full bg-gradient-to-br from-[#ffd700] to-[#b8860b] flex items-center justify-center text-slate-950 shadow-[0_2px_8px_rgba(255,215,0,0.25)] shrink-0 transition-transform group-hover:scale-110 animate-pulse-subtle">
+                    <Droplets className="w-3.5 h-3.5 xs:w-4.5 xs:h-4.5" />
                   </div>
                   <div>
-                    <h4 className="text-[11px] font-sans font-black text-white tracking-widest uppercase">ĐÀO TẠO, VÂN MẪU</h4>
-                    <p className="text-[10px] text-[#ffd700] font-mono tracking-wider font-bold mt-0.5">TEST KIT THỰC TẾ</p>
+                    <h4 className="text-[8px] xs:text-[10px] font-sans font-black text-white tracking-wider sm:tracking-widest uppercase">ĐÀO TẠO, VÂN MẪU</h4>
+                    <p className="text-[7.5px] xs:text-[9px] text-[#ffd700] font-mono tracking-wider font-bold mt-0.5">TEST KIT THỰC TẾ</p>
                   </div>
                 </div>
 
               </div>
 
               {/* Dual Action CTAs with extreme premium polish and precise text labels */}
-              <div className="flex flex-col sm:flex-row items-center gap-4 pt-2 max-w-xl">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-3.5 pt-1.5 max-w-xl w-full">
                 <button
                   onClick={() => {
                     const el = document.getElementById('onboarding');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#fff3b0] via-[#ffd700] to-[#b8860b] hover:from-white hover:to-[#ffd700] text-slate-950 font-sans font-black text-xs uppercase tracking-widest rounded-2xl shadow-[0_4px_20px_rgba(255,215,0,0.3)] hover:shadow-[0_0_35px_rgba(255,215,0,0.5)] group cursor-pointer flex items-center justify-center gap-3 border border-[#ffd700]/40 transition-all duration-350"
+                  className="w-full sm:w-auto px-5 py-3 sm:px-6 sm:py-3.5 bg-gradient-to-r from-[#fff3b0] via-[#ffd700] to-[#b8860b] hover:from-white hover:to-[#ffd700] text-slate-950 font-sans font-black text-[10px] sm:text-[11px] uppercase tracking-widest rounded-xl shadow-[0_4px_15px_rgba(255,215,0,0.25)] hover:shadow-[0_0_25px_rgba(255,215,0,0.4)] group cursor-pointer flex items-center justify-center gap-2 border border-[#ffd700]/40 transition-all duration-350"
                   id="hero-register-btn"
                 >
-                  <span>Đăng ký trở thành đối tác</span>
-                  <ArrowRight className="w-4 h-4 text-slate-950 group-hover:translate-x-1.5 duration-200" />
+                  <span>Đăng ký đối tác</span>
+                  <ArrowRight className="w-3.5 h-3.5 text-slate-950 group-hover:translate-x-1.5 duration-200" />
                 </button>
                 
                 <button
@@ -309,47 +309,47 @@ export default function App() {
                     const el = document.getElementById('supports');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="w-full sm:w-auto px-8 py-4 bg-[#020d1c]/90 hover:bg-[#07162b] border-2 border-[#d4af37]/40 hover:border-[#ffd700] text-white hover:text-[#ffd700] font-sans font-black text-xs uppercase tracking-widest rounded-2xl shadow-[0_0_15px_rgba(3,20,45,0.4)] cursor-pointer flex items-center justify-center gap-2.5 transition-all duration-350"
+                  className="w-full sm:w-auto px-5 py-3 sm:px-6 sm:py-3.5 bg-[#020d1c]/90 hover:bg-[#07162b] border-2 border-[#d4af37]/40 hover:border-[#ffd700] text-white hover:text-[#ffd700] font-sans font-black text-[10px] sm:text-[11px] uppercase tracking-widest rounded-xl shadow-[0_0_10px_rgba(3,20,45,0.3)] cursor-pointer flex items-center justify-center gap-1.5 transition-all duration-350"
                   id="hero-docs-btn"
                 >
-                  <span>Nhận bộ tài liệu hợp tác</span>
-                  <Download className="w-4 h-4 text-[#ffd700]" />
+                  <span>Tài liệu hợp tác</span>
+                  <Download className="w-3.5 h-3.5 text-[#ffd700]" />
                 </button>
               </div>
 
             </div>
 
             {/* Right Column (5 of 12) - Transparent Cyber Glass Showcase Sitting beautiful generated photo */}
-            <div className="lg:col-span-5 flex items-center justify-center relative">
+            <div className="lg:col-span-5 flex items-center justify-center relative mt-6 lg:mt-0 w-full px-2 sm:px-0">
               
               {/* Starry ring aura behind product stage */}
-              <div className="absolute w-80 h-80 rounded-full border border-[#00D4FF]/10 animate-spin-slow pointer-events-none" />
-              <div className="absolute w-[95%] h-[95%] rounded-full border-2 border-dashed border-[#ffd700]/5 pointer-events-none" />
+              <div className="absolute w-64 h-64 sm:w-80 sm:h-80 rounded-full border border-[#00D4FF]/10 animate-spin-slow pointer-events-none" />
+              <div className="absolute w-[90%] h-[90%] rounded-full border-2 border-dashed border-[#ffd700]/5 pointer-events-none" />
 
               {/* The frame box */}
-              <div className="relative w-full max-w-sm rounded-[2.5rem] bg-gradient-to-b from-[#03142d]/85 via-[#020d1c]/90 to-[#01091a]/95 border-2 border-[#ffd700]/25 p-4.5 shadow-[0_25px_60px_rgba(1,9,26,0.9),0_0_30px_rgba(0,212,255,0.15)] overflow-hidden group">
+              <div className="relative w-full max-w-[280px] xs:max-w-[325px] sm:max-w-sm rounded-2xl xs:rounded-[2rem] sm:rounded-[2.5rem] bg-gradient-to-b from-[#03142d]/85 via-[#020d1c]/90 to-[#01091a]/95 border-2 border-[#ffd700]/25 p-3 xs:p-4.5 shadow-[0_20px_50px_rgba(1,9,26,0.95),0_0_25px_rgba(0,212,255,0.12)] overflow-hidden group">
                 
                 {/* Floating bubbles elements inside representation */}
                 <div className="absolute top-[20%] left-[10%] w-6 h-6 rounded-full bg-[#00D4FF]/10 blur-[1px] animate-bounce" style={{ animationDuration: '6s' }} />
                 <div className="absolute bottom-[25%] right-[8%] w-8 h-8 rounded-full bg-[#ffd700]/10 blur-[2px] animate-bounce" style={{ animationDuration: '4.5s', animationDelay: '1s' }} />
 
                 {/* Golden Shield Brand Stamp atop the photo frame (matches top-right stamp in Image 1) */}
-                <div className="absolute top-4 right-4 z-20 w-24 h-24 bg-gradient-to-b from-[#b8860b] via-[#ffd700] to-[#8b6508] p-[1.5px] rounded-2xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-300 pointer-events-none">
-                  <div className="w-full h-full bg-slate-950 rounded-[14px] p-2 flex flex-col items-center justify-center text-center">
+                <div className="absolute top-2.5 right-2.5 xs:top-4 xs:right-4 z-20 w-16 h-16 xs:w-20 xs:h-20 sm:w-24 sm:h-24 bg-gradient-to-b from-[#b8860b] via-[#ffd700] to-[#8b6508] p-[1px] xs:p-[1.5px] rounded-[10px] xs:rounded-2xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-300 pointer-events-none">
+                  <div className="w-full h-full bg-slate-950 rounded-[9px] xs:rounded-[14px] p-1 xs:p-2 flex flex-col items-center justify-center text-center">
                     <div className="flex gap-0.5 text-[#ffd700]">
-                      <span className="text-[8px]">★</span>
-                      <span className="text-[10px] -mt-1 font-bold">★</span>
-                      <span className="text-[8px]">★</span>
+                      <span className="text-[6px] xs:text-[8px]">★</span>
+                      <span className="text-[8px] xs:text-[10px] -mt-0.5 xs:-mt-1 font-bold">★</span>
+                      <span className="text-[6px] xs:text-[8px]">★</span>
                     </div>
-                    <span className="text-[9px] font-display font-black text-white leading-none tracking-wider mt-0.5">RAINSOFT</span>
-                    <span className="text-[12px] font-display font-black text-transparent bg-clip-text bg-gradient-to-b from-[#ffd700] via-[#fff3b0] to-[#b8860b] leading-none tracking-widest mt-1 block">USA</span>
-                    <div className="w-8 h-[1px] bg-gradient-to-r from-transparent via-[#ffd700] to-transparent my-1" />
-                    <span className="text-[6px] font-mono text-slate-400 uppercase tracking-widest font-bold">SINCE 1933</span>
+                    <span className="text-[7px] xs:text-[9px] font-display font-black text-white leading-none tracking-wider mt-0.5">RAINSOFT</span>
+                    <span className="text-[9px] xs:text-[12px] font-display font-black text-transparent bg-clip-text bg-gradient-to-b from-[#ffd700] via-[#fff3b0] to-[#b8860b] leading-none tracking-widest mt-0.5 xs:mt-1 block">USA</span>
+                    <div className="w-5 xs:w-8 h-[1px] bg-gradient-to-r from-transparent via-[#ffd700] to-transparent my-0.5 xs:my-1" />
+                    <span className="text-[4px] xs:text-[6px] font-mono text-slate-400 uppercase tracking-widest font-bold">SINCE 1953</span>
                   </div>
                 </div>
 
                 {/* Majestic 3D Generated Photo showing systems on podium */}
-                <div className="relative w-full aspect-[4/5] rounded-[2rem] overflow-hidden border border-slate-800 bg-[#020d1c] shadow-inner">
+                <div className="relative w-full aspect-[4/5] rounded-[1rem] xs:rounded-[1.5rem] sm:rounded-[2rem] overflow-hidden border border-slate-800 bg-[#020d1c] shadow-inner">
                   <img
                     src="/src/assets/images/hero_product_pedestal_1781703353546.jpg"
                     alt="Hệ thống lọc mềm tổng RainSoft cao cấp chuẩn Mỹ trên bục hào quang"
@@ -362,9 +362,9 @@ export default function App() {
                 </div>
 
                 {/* Caption below image representing premium hardware */}
-                <div className="pt-3 pb-1 text-center">
-                  <span className="text-[10px] font-mono text-amber-200 tracking-widest font-black uppercase">RainSoft EC4 Softener & Carbon Filter Q2</span>
-                  <p className="text-[9px] text-[#DDEBFF]/65 mt-1 font-sans">Vật trưng bày tại Showroom SHAHA Việt Nam</p>
+                <div className="pt-2 sm:pt-3 pb-0.5 text-center">
+                  <span className="text-[8px] xs:text-[10px] font-mono text-amber-200 tracking-wider xs:tracking-widest font-black uppercase">RainSoft EC4 Softener & Carbon Filter Q2</span>
+                  <p className="text-[7.5px] xs:text-[9px] text-[#DDEBFF]/65 mt-0.5 xs:mt-1 font-sans">Vật trưng bày tại Showroom SHAHA Việt Nam</p>
                 </div>
 
               </div>
@@ -374,10 +374,10 @@ export default function App() {
           </div>
 
           {/* Majestic Trust Badges Bar (Matched strictly with the 5 columns at the bottom of Image 1) */}
-          <div className="w-full border-t border-b border-[#d4af37]/35 bg-[#03142d]/75 backdrop-blur-md py-6 px-6 rounded-[2rem] mt-20 shadow-[0_0_30px_rgba(255,215,0,0.06)] relative overflow-hidden">
+          <div className="w-full border-t border-b border-[#d4af37]/35 bg-[#03142d]/75 backdrop-blur-md py-4 px-5 rounded-2xl mt-8 sm:mt-10 lg:mt-12 shadow-[0_0_25px_rgba(255,215,0,0.05)] relative overflow-hidden">
             <div className="absolute bottom-[-10%] left-[20%] w-32 h-32 bg-cyan-500/5 rounded-full blur-2xl pointer-events-none" />
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-left relative z-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-3 text-left relative z-10">
               
               {/* Col 1 */}
               <div className="flex items-start gap-3 lg:border-r lg:border-slate-800/80 pr-3">
@@ -441,7 +441,7 @@ export default function App() {
       </section>
 
       {/* SECTION 2: VÌ SAO NÊN HỢP TÁC RAINSOFT? - 4 CORE VALUE WITH HIGH-END STYLE */}
-      <section className="py-24 bg-[#010919] border-t border-[#d4af37]/15 z-10 relative overflow-hidden" id="why">
+      <section className="py-12 sm:py-16 lg:py-20 bg-[#010919] border-t border-[#d4af37]/15 z-10 relative overflow-hidden" id="why">
         {/* Ambient starry backdrop grid and radiant outer space neon halos */}
         <div className="absolute inset-0 bg-[#020713]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,212,255,0.08),transparent_70%)] pointer-events-none" />
@@ -1231,12 +1231,12 @@ export default function App() {
       <section className="py-24 bg-[#020617] border-t border-[#d4af37]/15 relative z-10" id="segments">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center space-y-4 mb-16 max-w-5xl mx-auto">
+          <div className="text-center space-y-3 mb-16 max-w-5xl mx-auto">
             <span className="text-xs font-mono font-bold text-[#00D4FF] uppercase tracking-widest block">Đối tác tiềm năng</span>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none md:whitespace-nowrap">
+            <h2 className="text-xl sm:text-3xl md:text-4xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none md:whitespace-nowrap">
               Phân Khúc Đối Tác Phù Hợp
             </h2>
-            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed font-normal md:whitespace-nowrap">
+            <p className="text-[11px] sm:text-xs md:text-sm text-[#DDEBFF]/80 leading-relaxed font-normal md:whitespace-nowrap">
               Lựa chọn mô hình định hình kinh doanh chính để nhận định cơ hội hợp lực phát triển và dự toán dòng tiền khai phá của bạn.
             </p>
           </div>
@@ -1352,12 +1352,12 @@ export default function App() {
       <section className="py-24 bg-[#020617] border-t border-[#d4af37]/15 relative z-10" id="supports">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center space-y-4 mb-20 max-w-5xl mx-auto">
+          <div className="text-center space-y-3 mb-20 max-w-5xl mx-auto">
             <span className="text-xs font-mono font-bold text-[#00D4FF] uppercase tracking-widest block">Hỗ trợ đối tác toàn diện</span>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none md:whitespace-nowrap">
+            <h2 className="text-xl sm:text-3xl md:text-4xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none md:whitespace-nowrap">
               SHAHA Việt Nam Đồng Hành Phát Triển
             </h2>
-            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal md:whitespace-nowrap">
+            <p className="text-[11px] sm:text-xs md:text-sm text-[#DDEBFF]/80 leading-relaxed mt-3 font-normal md:whitespace-nowrap">
               Chúng tôi dẹp bỏ hoàn thành mọi rào cản bước vào ngành nước phân khúc xa xỉ bằng các chương trình hỗ trợ, vali test, 3D showroom độc quyền độc đáo.
             </p>
           </div>
@@ -1401,12 +1401,12 @@ export default function App() {
       <section className="py-24 bg-[#020617] border-t border-[#d4af37]/15 relative z-10" id="roadmap">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center space-y-4 mb-20 max-w-5xl mx-auto">
+          <div className="text-center space-y-3 mb-20 max-w-5xl mx-auto">
             <span className="text-xs font-mono font-bold text-[#00D4FF] uppercase tracking-widest block">Lộ trình 5 giai đoạn</span>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none md:whitespace-nowrap">
+            <h2 className="text-xl sm:text-3xl md:text-4xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none md:whitespace-nowrap">
               Mô Hình Đồng Hành Phát Triển
             </h2>
-            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal md:whitespace-nowrap">
+            <p className="text-[11px] sm:text-xs md:text-sm text-[#DDEBFF]/80 leading-relaxed mt-3 font-normal md:whitespace-nowrap">
               Triệt tiêu rủi ro kinh doanh, hỗ trợ đại lý xây dựng quy trình tiếp cận chuẩn mực từ thực chiến, đào tạo vali tới mở rộng showroom vùng thịnh vượng.
             </p>
           </div>
@@ -1497,12 +1497,12 @@ export default function App() {
       <section className="py-24 bg-[#020617] border-t border-[#d4af37]/15 relative z-10 animate-fade-in" id="market">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center space-y-4 mb-20 max-w-5xl mx-auto font-sans">
+          <div className="text-center space-y-3 mb-20 max-w-5xl mx-auto font-sans">
             <span className="text-xs font-mono font-bold text-[#00D4FF] uppercase tracking-widest block">Sức hút thị trường lọc tổng</span>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none md:whitespace-nowrap">
+            <h2 className="text-xl sm:text-3xl md:text-4xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none md:whitespace-nowrap">
               Thị Trường Đón Đầu Phân Khúc Cao Cấp
             </h2>
-            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal md:whitespace-nowrap">
+            <p className="text-[11px] sm:text-xs md:text-sm text-[#DDEBFF]/80 leading-relaxed mt-3 font-normal md:whitespace-nowrap">
               Lọc thô tại vòi hay lọc nước uống nhỏ giọt chỉ xử lý ngọn. Giới biệt thự cao cấp đòi hỏi nguồn nước mềm trung tâm bảo vệ trọn vẹn sức khỏe sinh hoạt lâu năm.
             </p>
           </div>
@@ -1851,12 +1851,12 @@ export default function App() {
       <section className="py-24 bg-[#020617] border-t border-[#d4af37]/15 relative z-10" id="onboarding">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <div className="text-center space-y-4 mb-12 max-w-5xl mx-auto">
+          <div className="text-center space-y-3 mb-12 max-w-5xl mx-auto">
             <span className="text-xs font-mono font-bold text-[#00D4FF] uppercase tracking-widest block">Mở khóa cơ hội</span>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none md:whitespace-nowrap">
+            <h2 className="text-xl sm:text-3xl md:text-4xl font-display font-black text-transparent bg-gradient-to-r from-white via-[#fff3b0] to-[#ffd700] bg-clip-text tracking-tight uppercase leading-none md:whitespace-nowrap">
               Bắt Đầu Hợp Tác RainSoft Ngay
             </h2>
-            <p className="text-sm text-[#DDEBFF]/80 leading-relaxed mt-4 font-normal md:whitespace-nowrap">
+            <p className="text-[11px] sm:text-xs md:text-sm text-[#DDEBFF]/80 leading-relaxed mt-3 font-normal md:whitespace-nowrap">
               Điền nhanh các thông tin năng lực dưới để chuyên viên SHAHA Việt Nam chuẩn bị các mẫu hồ sơ đại lý tốt nhất trước khi gọi điện liên hệ cho bạn.
             </p>
           </div>
