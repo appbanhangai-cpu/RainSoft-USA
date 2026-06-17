@@ -1,0 +1,6 @@
+{
+  "name": "SHAHA RainSoft Partner Portal",
+  "description": "Cổng thông tin và đăng ký hợp tác phát triển đại lý RainSoft USA toàn quốc cùng SHAHA Việt Nam.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
